@@ -1,0 +1,15 @@
+﻿@model HanumanInstitute.SpiritualSelfTransformation.Components.ProductBoxModel
+<div class="productBox" @Html.Raw(Model.GetMargin())>
+    <div class="@("productHeader" + Model.GetDisplayStyle())">
+        &nbsp;</div>
+    @Html.Raw(Model.GetImage())
+    <div class="@("productSide" + Model.GetDisplayStyle())" style="@($"height: {Model.Height}px;")">
+        &nbsp;</div>
+    <div class="productDec" style="@($"height: {Model.Height}px;")">
+        <h4><a href="@Model.GetUrl()">@Model.Title</a></h4>
+        <p>@Html.Raw(Model.Text)</p>
+        <a class="productReadMore" href="@Model.GetUrl()">Read More </a>
+    </div>
+    <div class="productCorner">
+        &nbsp;</div>
+</div>

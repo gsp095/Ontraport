@@ -1,0 +1,21 @@
+﻿@page "/soul-alignment-reading"
+<Page Title="Soul Alignment Reading Order Form" />
+
+<OrderForm Product="@Product" ReturnUrl="https://www.spiritualselftransformation.com/submit-picture" OntraportFormId="p2c20557f1" ValidatingCoupon="ValidateCoupon" Guarantee="365 Days" />
+
+@code {
+    public OrderFormProduct Product => _product ?? (_product = new OrderFormProduct(ProductNames.SoulAlignmentReading, 296) { StandardPrice = 497 });
+    private OrderFormProduct? _product;
+
+    public void ValidateCoupon(ValidatingCouponEventArgs e)
+    {
+        Product.Price = 296;
+
+        if (e.CouponCode == "valid")
+        {
+            Product.Price = 147;
+            e.Message = "10% discount!";
+            e.IsValid = true;
+        }
+    }
+}

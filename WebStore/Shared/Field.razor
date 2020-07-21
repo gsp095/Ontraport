@@ -1,0 +1,47 @@
+﻿@using System.Linq.Expressions;
+
+<div class="col-md-@LabelWidth">
+    <Label For="@For" ForId="@GetUniqueId()" Text="@Text" @attributes="LabelAttributes" style="width: 100%" />
+</div>
+<div class="col-md-@Width">
+    @ChildContent
+    <ValidationMessage For="@For" style="position: absolute" />
+</div>
+
+@code {
+    //[Parameter(CaptureUnmatchedValues = true)]
+    //public IDictionary<string, object>? AdditionalAttributes { get; set; }
+
+    [Parameter]
+    public Expression<Func<object?>>? For { get; set; }
+
+    [Parameter]
+    public string? ForId { get; set; }
+
+    [Parameter]
+    public string? Text { get; set; }
+
+    [Parameter]
+    public int Width { get; set; } = 10;
+
+    [Parameter]
+    public int LabelWidth { get; set; } = 2;
+
+    [Parameter]
+    public bool Required { get; set; } = false;
+
+    [Parameter]
+    public RenderFragment? ChildContent { get; set; }
+
+    private IReadOnlyDictionary<string, object>? LabelAttributes => Required ? new Dictionary<string, object>() { { "class", "required" } } : null;
+
+    private string GetUniqueId()
+    {
+        if (For != null)
+        {
+            var expression = For.Body as MemberExpression ?? (MemberExpression)((UnaryExpression)For.Body).Operand;
+            return ForId ?? expression.Member.Name;
+        }
+        return string.Empty;
+    }
+}

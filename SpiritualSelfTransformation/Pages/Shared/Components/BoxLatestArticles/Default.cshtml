@@ -1,0 +1,17 @@
+﻿@model IEnumerable<HanumanInstitute.SpiritualSelfTransformation.Models.RssItem>
+<div class="sidebartop">&nbsp;</div>
+<div class="sidebar">
+    <h2 style="padding-bottom:8px">Latest Articles</h2>
+    <ul class="menu">
+        @foreach (var item in Model)
+        {
+        <li>
+            <a href="@item.Uri" class="text-blue">@Html.Raw(item.Title)</a>
+        </li>
+        }
+    </ul>
+    @*<div><%= DateTime.Now.ToString() %></div>*@
+</div>
+<div class="sidebarbottom">
+    &nbsp;
+</div>

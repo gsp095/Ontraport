@@ -1,0 +1,45 @@
+﻿@{
+    string GetReadMoreLink()
+    {
+        // Only insert links on the main website, not on landing pages.
+        // if (Page.Master.GetType() == typeof(MainMasterPage))
+        return string.Format("<a href='{0}' class='readmore'>Read More</a><br />", Url.Content("~/about-us/testimonials"));
+        //else
+        //    return "<br />";
+    }
+}
+<div class="sidebartop">&nbsp;</div>
+<div class="sidebar">
+    <h2>Testimonials</h2>
+    <marquee height="300" onmouseout="this.start();" onmouseover="this.stop();" scrollamount="3" direction="up"
+             behavior="scroll" loop="-1">
+        <p class="boxdesc">
+            "Etienne's product <em>Sexual Magnetism</em> helped me cultivate a new understanding of masculine and feminine energies. I highly recommend this product to ANYONE seeking to learn how to create the relationships and love life they've always wanted." <br />
+            <em>&ndash; Kurt Spelling  (USA)</em>
+        </p>
+        @Html.Raw(GetReadMoreLink())
+        <p class="boxdesc">
+            "I started to combine your style with my style, and the results are... incredible. My frame creates a void, and women feel compelled to fill it."<br />
+            <em>&ndash; Eric  (Spain)</em>
+        </p>
+        @Html.Raw(GetReadMoreLink())
+        <p class="boxdesc">
+            "I have bought other products and they all work towards being something that is not you. I'm not sure if that makes sense."<br />
+            <em>&ndash; Jugjit  (UK)</em>
+        </p>
+        @Html.Raw(GetReadMoreLink())
+        <p class="boxdesc">
+            "It's just money. There's plenty of it. I unlearned a lot because of the book, there is a sense of lightness to it, of how effortless the attraction really is, it's like taking off a shirt."<br />
+            <em>&ndash; Jared (Finland)</em>
+        </p>
+        @Html.Raw(GetReadMoreLink())
+        <p class="boxdesc">
+            "As a result of your book and your way to see if a woman's energy matches yours before you even approach, I got my "transmission"/attunement just this last weekend. I have actually already met someone who is quite a match and resonates with me on many levels. Other things are clicking into place."<br />
+            <em>&ndash; Paul (USA)</em>
+        </p>
+        @Html.Raw(GetReadMoreLink())
+    </marquee>
+</div>
+<div class="sidebarbottom">
+    &nbsp;
+</div>

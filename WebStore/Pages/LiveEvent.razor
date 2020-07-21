@@ -1,0 +1,12 @@
+﻿@page "/live-event"
+@inject BlazorQueryString query
+<Page Title="Live Event Order Form" />
+
+<OrderForm Product="@Product" EnablePayPal="false" />
+
+@code {
+    public OrderFormProduct Product => _product ?? (_product = new OrderFormProduct(ProductNames.LiveEvent, Price));
+    private OrderFormProduct? _product;
+
+    public decimal Price => query.GetInt32("p", 1, 10000) ?? 1000;
+}

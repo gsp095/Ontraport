@@ -1,0 +1,15 @@
+﻿@page "/god-money-confirm"
+@inject BlazorQueryString query
+<Page Title="God & Money Masterclass Confirmation" />
+
+<h2>God & Money Masterclass: Your Payment Has Been Received</h2>
+<p class="blue">Important: Fill the form below to submit your information into our system.</p>
+
+<OrderForm Product="@Product" ReturnUrl="https://hanumaninstitute.pages.ontraport.net/thank-you" SummaryVisible="true" LogOnly="true" />
+
+@code {
+    public OrderFormProduct Product => _product ?? (_product = new OrderFormProduct(ProductNames.GodMoneyMasterclass, Price));
+    private OrderFormProduct? _product;
+
+    public decimal Price => query.GetInt32("p", 1, 10000) ?? 497;
+}

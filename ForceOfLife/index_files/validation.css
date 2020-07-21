@@ -1,0 +1,21 @@
+/* CSS Document */
+span.validate_error
+{
+	display:block;
+	color:#DD3C10;
+	/*line-height:15px;*/
+	margin-top:5px;
+	padding-left:15px;
+	background:url(../images/validation_advice_bg.gif) no-repeat 2px 0px;
+	clear:both;
+}
+input.validate_error, input[type="text"].validate_error, input[type="password"].validate_error, select.validate_error, textarea.validate_error
+{
+	border:1px solid #DD3C10 !important;
+	background-color:#FFEDEF !important;
+	background-image:none;
+}
+input[type="text"].valid, input[type="password"].valid, select.valid, textarea.valid
+{
+	
+}

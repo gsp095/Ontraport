@@ -1,0 +1,53 @@
+﻿@page
+@model HanumanInstitute.SpiritualSelfTransformation.Pages.AdminCoachingSessionModel
+@{
+    var layout = ViewData.Layout();
+    layout.Title = "Admin: Coaching Session";
+    layout.SidebarVisible = false;
+}
+@section Head {
+    <meta name="robots" content="noindex" />
+}
+<h1>Admin: Coaching Session</h1>
+<form method="post" class="form" enctype="multipart/form-data">
+    <table border="0" cellspacing="0" cellpadding="0">
+        <tr>
+            <td style="width: 100px;"><label asp-for="Input.Email" class="required"></label></td>
+            <td>
+                <input asp-for="Input.Email" class="input large" />
+                <span asp-validation-for="Input.Email" class="text-danger"></span>
+            </td>
+        </tr>
+        @*<tr>
+            <td><label asp-for="Input.CallsLeft" class="required"></label></td>
+            <td>
+                <input type="text" asp-for="Input.CallsLeft" class="input large" />
+                <span asp-validation-for="Input.CallsLeft" class="text-danger"></span>
+            </td>
+        </tr>*@
+        <tr>
+            <td><label asp-for="Input.Recording" class="field"></label></td>
+            <td>
+                <input type="file" asp-for="Input.Recording" />
+                <span asp-validation-for="Input.Recording" class="text-danger"></span>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 100px;"><label asp-for="Input.Password" class="required"></label></td>
+            <td>
+                <input asp-for="Input.Password" class="input large" />
+                <span asp-validation-for="Input.Password" class="text-danger"></span>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <br />
+                <input type="submit" value="SUBMIT" class="submitbox" />
+            </td>
+        </tr>
+    </table>
+</form>
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -1,0 +1,37 @@
+﻿@page "/god-money"
+@using HanumanInstitute.CommonWeb.CurrencyExchange
+@inject ICurrencyConverter converter
+@inject BlazorQueryString query
+<Page Title="God & Money Masterclass Checkout" />
+
+<h2>God &amp; Money Masterclass Checkout</h2>
+<ul>
+    <li><strong>Connect with God</strong> so that you feel guided, supported and protected.</li>
+    <li><strong>Eliminate scarcity</strong> so that your decisions and actions aren't limited by money.</li>
+    <li><strong>Build your vision</strong> to bring forth your contribution into this world.</li>
+</ul>
+
+<OrderForm Product="@Product" ReturnUrl="https://hanumaninstitute.pages.ontraport.net/thank-you" EnablePayPal="false" />
+
+<p>&nbsp;</p>
+<p><strong><a href="@GetPayPalLink()">Click here to pay via PayPal.</a></strong> You will be billed the equivalent amount converted to CAD.</p>
+<p>&nbsp;</p>
+<p class="blue">OUR GUARANTEE: INCREASE YOUR INCOME BY (AT LEAST) $497 IN 8 WEEKS OR LESS</p>
+<p class="bold">If you do the work and don't earn your investment in EXTRA income, I will credit your investment towards any other product or service.</p>
+
+@code {
+    public OrderFormProduct Product => _product ?? (_product = new OrderFormProduct(ProductNames.GodMoneyMasterclass, Price));
+    private OrderFormProduct? _product;
+
+    public decimal Price => query.GetInt32("p", 1, 10000) ?? 497;
+
+    public async Task<string> GetPayPalLink()
+    {
+        var price = Price;
+        var cadTotal = await converter.ConvertAsync(price, Currency.Usd, Currency.Cad).ConfigureAwait(false);
+        var urlTotal = cadTotal.ToStringInvariant().Replace(".", "%2e");
+        return "https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=W5ZDVDXZVHWSQ&lc=CA&item_name=God%20%26%20Money%20Masterclass&amount={0}&currency_code=CAD&button_subtype=services&no_note=1&no_shipping=1&rm=1&return={1}&cancel_return=https%3a%2f%2fstore%2espiritualselftransformation%2ecom%2fgod%2dmoney&bn=PP%2dBuyNowBF%3abtn_buynowCC_LG%2egif%3aNonHosted".FormatInvariant(
+            urlTotal,
+            System.Net.WebUtility.UrlEncode("https://store.spiritualselftransformation.com/god-money-confirm/p=" + price).Replace("-", "%2d", StringComparison.InvariantCulture).Replace(".", "%2e", StringComparison.InvariantCulture));
+    }
+}

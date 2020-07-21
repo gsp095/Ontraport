@@ -1,0 +1,279 @@
+/*
+Theme Name: Spiritual Self Transformation Theme
+Theme URI: https://www.spiritualselftransformation.com
+Description: Simple but elegant theme with lots of theme options. Designed by <a href="http://www.tagdesigning.com/">TagDesigning</a>.
+Version: 2.02
+Author: Idrees Ibrahim
+Author URI: http://www.tagdesigning.com
+Tags: light, brown, two-columns, flexible-width, right-sidebar, theme-options, threaded-comments, custom-header, translation-ready
+*/
+
+
+/* global prop. */
+*{
+  margin: 0;
+  padding: 0;
+}
+
+/* try to use custom fonts trough css3 (opera 10+, safari 3.1+ and ff 3.5+) */
+@font-face {
+  font-family: "Union";
+  src: url("fonts/union.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Share";
+  src: url("fonts/share.ttf") format("truetype");
+}
+
+
+/*** COMMON ELEMENTS ***/
+
+html, body{
+  height:100%;
+}
+
+html{
+  font-size: 100%;
+}
+
+body{
+  font-family: "Lucida Grande", "Lucida Sans Unicode", Calibri, Arial, Helvetica, Sans, FreeSans, Jamrul, Garuda, Kalimati;
+  font-size: 13px;
+  font-style: normal;
+  color: #000;
+  min-height:100%;
+  height:auto !important; /* ie6 ignores it */
+  height:100%; /* fix */
+  position: relative;
+}
+
+
+/* links */
+
+a{
+  color: #6e90a6;
+}
+
+a:hover{
+  color: #f44365;
+  text-decoration: none;
+}
+
+
+/* tables */
+
+table{
+  margin: .5em 0 1em;
+}
+
+table td, table th{
+  text-align: left;
+/*  border-right: 1px solid #e8e1c8*/;
+  padding: .4em .8em;
+}
+
+table th{
+  background: #ab967e url(images/table-header.gif) repeat-x left top;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: normal;
+  border-bottom: 1px solid #e8e1c8;
+}
+
+table td{
+ /* background: #d8ceb6;*/
+}
+
+table tr.even td{
+  background: #e1d9c3;
+}
+
+table tr:hover td{
+  /*background: #f0eada;*/
+}
+
+
+/* forms */
+
+input, textarea, select{
+  font-family: "Lucida Grande", "Lucida Sans Unicode", Arial, Helvetica, Sans, FreeSans, Jamrul, Garuda, Kalimati;
+  font-size: 100%;
+  margin: .2em 0;
+}
+
+input, textarea{
+  padding: .2em .4em;
+}
+
+input.radio, input.checkbox{
+  background: #fff;
+  padding: 2px;
+}
+
+form label{
+  font-weight: normal;
+}
+
+fieldset{
+  padding: .8em;
+  border: 1px solid #d2c7af;
+}
+
+legend{
+  padding: 2px 15px 10px 15px;
+  text-transform: uppercase;
+  font-style: italic;
+  font-size: 115%;
+}
+
+
+/* lists */
+
+ul, ol{
+  margin: .4em 0 1em;
+  line-height: 150%;
+}
+
+
+
+ul li, ol li{
+  list-style-position:outside;
+}
+
+dl{
+  padding: .3em 0 .8em;
+}
+
+dt {
+  float: left;
+  clear: left;
+  width: 9em;
+  text-align: right;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+dd {
+  margin: 0 0 0 10em;
+  padding: 0 0 0.5em 0;
+}
+
+
+/* other */
+
+p{
+  margin: .6em 0 .3em;
+  line-height: 125%;
+  padding-bottom:4px; padding-top:4px;
+}
+
+img{
+  border: 0;
+}
+
+hr{
+  color: #b4aca1;
+  background: #b4aca1;
+  border-bottom: 1px solid #f6f4eb;
+}
+
+small{ font-size: 80%; }
+
+pre{
+  overflow: auto;
+  white-space: pre-wrap;       /* css3 */
+  white-space: -moz-pre-wrap;  /* ff */
+  word-wrap: break-word;       /* ie */
+  font-size: 12px;
+  font-family: "Courier New", Courier, "Lucida Console", Monaco, "DejaVu Sans Mono", "Nimbus Mono L", "Bitstream Vera Sans Mono";
+  background: #fff;
+  padding: .4em;
+  margin: 1em 0;
+}
+
+blockquote{
+  margin: 1em 25% 1em 0;
+  padding: .2em .2em .2em 5em;
+  border: 1px dotted #937d68;
+  font-style: italic;
+  color: #937d68;
+  background: #fff url(images/blockquote.png) no-repeat 4px top;
+}
+
+blockquote p{
+  padding: 8px;
+  margin: 2px;
+}
+
+/*** BASIC LAYOUT ***/
+
+.subscribeboxlarge {
+    background-position: top left;
+    background-repeat: repeat-y;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    width: 100%;
+    background-color: #c8ebd6;
+    padding: 4px 14px 0px 16px;
+    clear: both;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    width: 34px;
+    height: 34px;
+    background: url(https://static.upviral.com/assets/css/popup2/images/common/fancybox_sprite.png)!important;
+    right: -12px;
+    top: -19px;
+    z-index: 9;
+    float: right;
+}
+
+.text_form {
+    display: block;
+    position: relative;
+    width: 100%;
+    text-align: center;
+    margin-top: 2%;
+}
+.subscribeboxlarge #sub-form {
+    position: relative;
+    width: 100%;
+    margin: auto;
+}
+
+.subscribebox .inputbox, .subscribeboxlarge .inputbox {
+    width: 48%;
+    height: 29px;
+    padding: 2px;
+    margin-top: 3px;
+    margin-bottom: 2%;
+}
+
+input#submit-trigger {
+    width: 30% !important;
+
+    background: #bc0404;
+    text-align: center;
+    margin: auto;
+    position: relative;
+    display: block;
+    margin-top: 2%;
+    color: white;
+}
+
+div#visibile_form {
+    width: 10%;
+    background: #bc0404;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+}
+input, textarea, select {
+    font-family: "Lucida Grande", "Lucida Sans Unicode", Arial, Helvetica, Sans, FreeSans, Jamrul, Garuda, Kalimati;
+    font-size: 100%;
+    margin: .2em 0;
+    width: 90%;
+}

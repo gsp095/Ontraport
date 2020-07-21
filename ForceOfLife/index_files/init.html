@@ -1,0 +1,9 @@
+$('document').ready(function() {
+	$.metadata.setType("attr", "validate");
+	$("form.validate").each(function(index) {
+	    $(this).validate({errorElement: "span", errorClass:"validate_error"});
+  });
+  $("form.validatehidden").each(function(index) {
+	    $(this).validate({errorElement: "span",ignore: ".ignorevalidation", errorClass:"validate_error"});
+  });
+});

@@ -1,0 +1,28 @@
+﻿@page "{code?}"
+@model ErrorModel
+@{
+    var layout = ViewData.Layout();
+    layout.Title = Model.CodeName;
+    layout.SidebarVisible = false;
+}
+@if (Model.Code == 404)
+{
+    <h2 class="text-danger">The page you are looking for cannot be found.</h2>
+    <p>Please check your URL and try again.</p>
+}
+else
+{
+    <h2 class="text-danger">An error occurred while processing your request.</h2>
+}
+<p>&nbsp;</p>
+@if (Model.Code.HasValue)
+{
+    <p>
+        <strong>Status Code:</strong> <code>@Model.Code - @Model.CodeName</code>
+    </p>
+}
+else
+{
+    <p><strong><a asp-page="/contact-us">If the problem persists, contact the webmaster.</a></strong></p>
+}
+<p>&nbsp;</p>

@@ -1,0 +1,108 @@
+﻿@page
+@model RegisterModel
+@{
+    ViewData["Title"] = "Register";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div class="loginsform">
+    <div class="container">
+        <div>
+            <div class="loginform-width">
+                <div class="tab">
+                    <button class="tablinks" onclick="openCity(event, 'Register')" @Html.Raw(Model.Handler != "Login" ? "id='defaultOpen'" : "")>Register</button>
+                    <button class="tablinks" onclick="openCity(event, 'Signin')" @Html.Raw(Model.Handler == "Login" ? "id='defaultOpen'" : "")>Sign in</button>
+                </div>
+
+                <div id="Register" class="tabcontent">
+                    <div class="tabsbody">
+                        <form asp-route-returnUrl="@Model.ReturnUrl" method="post" asp-page-handler="Register">
+                            <p>New user? Create a new account below</p>
+                            <div asp-validation-summary="All" class="text-danger"></div>
+                            <div class="form-group">
+                                <label asp-for="RegisterInput.Email"></label>
+                                <input asp-for="RegisterInput.Email" class="form-control" />
+                                <span asp-validation-for="RegisterInput.Email" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="RegisterInput.Password"></label>
+                                <input asp-for="RegisterInput.Password" class="form-control" />
+                                <span asp-validation-for="RegisterInput.Password" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="RegisterInput.ConfirmPassword"></label>
+                                <input asp-for="RegisterInput.ConfirmPassword" class="form-control" />
+                                <span asp-validation-for="RegisterInput.ConfirmPassword" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="RegisterInput.UserRole"></label>                              
+                                <select asp-for="RegisterInput.UserRole" class="form-control" >
+                                    <option value="Admin">Admin</option>
+                                    <option value="User">User</option>
+                                </select>
+                                <span asp-validation-for="RegisterInput.UserRole" class="text-danger"></span>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Register</button>
+                        </form>
+                    </div>
+                    <div class="formterm" style="margin-top:12px;">
+                        <p>
+                            By clicking “Register”, you agree to our terms of service and privacy statement. We’ll
+                            occasionally send you account related emails.
+                        </p>
+                    </div>
+                </div>
+
+                <div id="Signin" class="tabcontent">
+                    <div class="tabsbody text-center">
+                        <form asp-route-returnUrl="@Model.ReturnUrl" method="post" asp-page-handler="Login">
+                            <p>Existing user? Sign in below</p>
+                            <div asp-validation-summary="All" class="text-danger"></div>
+                            <div class="form-group">
+                                <label asp-for="LoginInput.Email"></label>
+                                <input asp-for="LoginInput.Email" class="form-control" />
+                                <span asp-validation-for="LoginInput.Email" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="LoginInput.Password"></label>
+                                <input asp-for="LoginInput.Password" class="form-control" />
+                                <span asp-validation-for="LoginInput.Password" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <div class="checkbox">
+                                    <label asp-for="LoginInput.RememberMe">
+                                        <input asp-for="LoginInput.RememberMe" />
+                                        @Html.DisplayNameFor(m => m.LoginInput.RememberMe)
+                                    </label>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Register</button>
+                            &nbsp; &nbsp; &nbsp;<span class="forgotpas"><a href="#">Forgot password?</a></span>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script type="text/javascript">
+        function openCity(evt, cityName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(cityName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+        // Get the element with id="defaultOpen" and click on it
+        document.getElementById("defaultOpen").click();
+    </script>
+}

@@ -1,0 +1,35 @@
+﻿@inject NavigationManager nav;
+@if (Title.HasValue())
+{
+    <Title>@Title</Title>
+}
+@if (Description.HasValue())
+{
+    <Meta Name="description" Content="@Description" />
+}
+@if (Keywords.HasValue())
+{
+    <Meta Name="keywords" Content="@Keywords" />
+}
+@if (Canonical.HasValue())
+{
+    <Link Rel="canonical" Href="@nav.ToAbsoluteUri(Canonical).AbsoluteUri" />
+}
+else
+{
+    <Link Rel="canonical" Href="@nav.ToAbsoluteUri(nav.Uri).GetLeftPart(UriPartial.Path)" />
+}
+
+@code {
+    [Parameter]
+    public string? Title { get; set; }
+
+    [Parameter]
+    public string? Description { get; set; }
+
+    [Parameter]
+    public string? Keywords { get; set; }
+
+    [Parameter]
+    public string? Canonical { get; set; }
+}

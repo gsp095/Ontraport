@@ -1,0 +1,48 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+    <UserSecretsId>fae7995c-b54b-4d87-8ed4-68f3a1dd3698</UserSecretsId>
+    <RootNamespace>HanumanInstitute.Satrimono</RootNamespace>
+    <AssemblyName>Satrimono</AssemblyName>
+    <NeutralLanguage>en</NeutralLanguage>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove=".editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <AdditionalFiles Include=".editorconfig" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <PackageReference Include="LazyCache" Version="2.0.4" />
+    <PackageReference Include="LazyCache.AspNetCore" Version="2.0.4" />
+    <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="3.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <Condition>'$(Configuration)' == 'Debug'</Condition>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.4" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.2" ExcludeAssets="All" />
+    <PackageReference Include="System.ServiceModel.Syndication" Version="4.7.0" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <ProjectReference Include="..\CommonWebApp\CommonWebApp.csproj" />
+    <ProjectReference Include="..\CommonWeb\CommonWeb.csproj" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <None Update="App_Data\Satrimono.db">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

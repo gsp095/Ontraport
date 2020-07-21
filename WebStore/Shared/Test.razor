@@ -1,0 +1,25 @@
+﻿    <RadzenRadioButtonList @bind-Value="PaymentMethod" TValue="string" Orientation="Orientation.Vertical">
+        <Items>
+            <RadzenRadioButtonListItem @key="1" Text="Credit Card USD (for United States)" Value="@StrCreditCardUsd" />
+            <RadzenRadioButtonListItem @key="2" Text="Credit Card CAD (recommended for international)" Value="@StrCreditCardCad" />
+            @if (ShowPayPal)
+            {
+                <RadzenRadioButtonListItem @key="3" Text="PayPal" Value="@StrPayPalForm" />
+            }
+        </Items>
+    </RadzenRadioButtonList>
+    <RadzenButton ButtonType="ButtonType.Submit" Text="Apply" ButtonStyle="ButtonStyle.Light" Click="Click" />
+
+    @code {
+        public const string StrCreditCardUsd = "CreditCardUsd";
+        public const string StrCreditCardCad = "CreditCardCad";
+        public const string StrPayPalForm = "PayPalForm";
+
+        public string PaymentMethod { get; set; } = StrCreditCardUsd;
+        public bool ShowPayPal { get; set; } = true;
+
+        public void Click()
+        {
+            ShowPayPal = !ShowPayPal;
+        }
+    }

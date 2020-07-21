@@ -1,0 +1,85 @@
+﻿@using Microsoft.AspNetCore.Http.Extensions
+@using HanumanInstitute.CommonWeb
+@{
+    var layout = ViewData.Layout();
+}
+<!DOCTYPE html>
+<html lang="@layout.Language">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@layout.Title - Shamanic Attraction</title>
+    <meta name="description" content="@layout.Description">
+    <meta name="keywords" content="@layout.Keywords">
+    <meta name="author" content="Etienne Charland" />
+
+    <meta property="og:site_name" content="Shamanic Attraction" />
+    <meta property="og:type" content="website" />
+    <meta property="fb:admins" content="726296462" />
+    <meta property="og:title" content="@(layout.FacebookTitle ?? layout.Title + " - Shamanic Attraction")" />
+    <meta property="og:image" content="@Url.AbsoluteContent(layout.FacebookImage ?? "~/images/logo-small.png")" />
+    <meta property="og:url" content="@(Context.Request.GetEncodedUrl())" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/theme-overcast/jquery-ui-1.10.0.custom.min.css" />
+    <link rel="stylesheet" href="~/css/jqueryslidemenu.css" />
+    @RenderSection("Head", required: false)
+</head>
+<body>
+    <div id="page1">
+        <div id="wrapper">
+            <div class="header hgt1">
+                <partial name="_Menu" />
+            </div>
+            <div class="middleDiv">
+                <div class="leftPanel alpha">
+                    <div class="productRow">
+                        <partial name="_CookieConsentPartial" />
+                        @if (layout.FacebookLike)
+                        {
+                            <partial name="_FacebookLike" />
+                        }
+                        @RenderBody()
+                        <div class="clear">
+                            &nbsp;
+                        </div>
+                        @if (layout.ShareBar)
+                        {
+                            <partial name="_ShareBar" />
+                        }
+                    </div>
+                </div>
+                @if (layout.SidebarVisible)
+                {
+                    <div id="Sidebar" class="rightPanel">
+                        @RenderSection("Sidebar", required: false)
+                        @if (!IsSectionDefined("Sidebar"))
+                        {
+                            <partial name="_BoxSubscribe" />
+                            <partial name="_BoxPromo" />
+                            <partial name="_BoxLatestArticles" />
+                        }
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+    <partial name="_Footer" />
+
+    <environment include="Development">
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"
+                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                asp-fallback-test="window.jQuery"
+                crossorigin="anonymous"
+                integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=">
+        </script>
+    </environment>
+    <script src="~/js/helper.js"></script>
+    <script src="~/js/jquery-ui-1.10.0.custom.min.js"></script>
+    <script src="~/js/jqueryslidemenu.js"></script>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

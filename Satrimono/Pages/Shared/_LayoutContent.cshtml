@@ -1,0 +1,20 @@
+﻿@{
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+@section Head {
+    @RenderSection("Head", required: false)
+}
+@section Title {
+    <div class="row inn-banner mar-btm-10">
+        <h1>@ViewData["Title"]</h1>
+    </div>
+}
+@section Scripts {
+    @RenderSection("Scripts", required: false)
+}
+<div class="whiite-bg mission-outer">
+    <div class="container mar-btm-10" style="padding-top:20px;">
+        @RenderBody()
+    </div>
+    <div class="clearfix"></div>
+</div>

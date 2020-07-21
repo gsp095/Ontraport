@@ -1,0 +1,185 @@
+﻿@if (SummaryVisible)
+{
+    <p class="blue">Order Summary</p>
+    <div class="grid gridheader gridcolProduct">Product</div>
+    <div class="grid gridheader gridcolQuantity">Quantity</div>
+    <div class="grid gridheader gridcolPrice">Price</div>
+    <div class="grid gridheader gridcolTotal">Total</div>
+    <div class="clear"></div>
+
+    @foreach (var item in Products)
+    {
+        <div class="grid gridcolProduct">@GetProductText(item)</div>
+        <div class="grid gridcolQuantity">
+            @if (item.AllowEditQuantity)
+            {
+                <RadzenNumeric @bind-Value="item.Quantity" Min="0" Max="100" Style="width:100%" />
+            }
+            else
+            {
+                @item.Quantity
+            }
+        </div>
+        <div class="grid gridcolPrice">
+            @if (item.StandardPrice.HasValue && item.StandardPrice != item.Price)
+            {
+                <s>$@item.StandardPrice</s>
+            }
+            &nbsp;$@item.Price
+        </div>
+        <div class="grid gridcolTotal">$@(item.Price * item.Quantity)</div>
+        @if (item.AllowRemove)
+        {
+            <RadzenButton ButtonType="ButtonType.Button" Text="🗙" ButtonStyle="ButtonStyle.Light" Click="x => RemoveProduct(item)" />
+        }
+        <div class="clear"></div>
+    }
+    <div class="grid gridtotaltext">Grand Total: </div>
+    <div class="grid gridtotal">$@Total USD</div>
+    <div class="clear">&nbsp;</div>
+}
+
+@if (!string.IsNullOrEmpty(Guarantee) && string.Compare(Guarantee, "NONE", StringComparison.InvariantCultureIgnoreCase) != 0)
+{
+    <div class="guarantee">
+        <div class="guaranteeseal">
+            &nbsp;
+        </div>
+        <div class="guaranteetext">
+            365 Days Money-Back Guarantee
+        </div>
+        <div class="guaranteedesc">
+            If the <i>@(Product.Display ?? Product.Name)</i> doesn't have a huge impact in your life or if you are dissatisfied for
+            any reason, send us an email and we will refund your money. The risk is on us.
+        </div>
+    </div>
+    <div class="clear">&nbsp;</div>
+}
+
+@if (ValidatingCoupon.HasDelegate)
+{
+    <EditForm Model="@Coupon" OnValidSubmit="CouponSubmitAsync" class="form">
+        <div style="margin-bottom: 1rem" class="row">
+            <Field For="@(() => Coupon.CouponCode)" Width="4" Required="true">
+                <RadzenTextBox @bind-Value="@Coupon.CouponCode" class="form-control" id="CouponCode" />
+            </Field>
+            <RadzenButton ButtonType="ButtonType.Submit" Text="Apply" ButtonStyle="ButtonStyle.Light" />
+            <div>@Coupon.Message</div>
+            <div class="alert">@Coupon.Error</div>
+        </div>
+    </EditForm>
+    <p>&nbsp;</p>
+}
+
+<EditForm EditContext="@InputContext" OnValidSubmit="OrderSubmitAsync" class="form">
+    <ObjectGraphDataAnnotationsValidator />
+
+    <p class="blue">Contact Information</p>
+
+    <div style="margin-bottom: 1rem" class="row">
+        <Field For="@(() => Input.Address.FirstName)" Width="4" Required="true">
+            <RadzenTextBox @bind-Value="@Input.Address.FirstName" class="form-control" id="FirstName" />
+        </Field>
+        <Field For="@(() => Input.Address.LastName)" Width="4" Required="true">
+            <RadzenTextBox @bind-Value="@Input.Address.LastName" class="form-control" id="LastName" />
+        </Field>
+    </div>
+    <div style="margin-bottom: 1rem" class="row">
+        <Field For="@(() => Input.Address.Email)" Required="true">
+            <RadzenTextBox @bind-Value="@Input.Address.Email" class="form-control" id="Email" />
+        </Field>
+    </div>
+    <div style="margin-bottom: 1rem" class="row">
+        <Field For="@(() => Input.Address.Address)" Required="true">
+            <RadzenTextBox @bind-Value="@Input.Address.Address" class="form-control" id="Address" />
+        </Field>
+    </div>
+    <div style="margin-bottom: 1rem" class="row">
+        <Field For="@(() => Input.Address.Address2)">
+            <RadzenTextBox @bind-Value="@Input.Address.Address2" class="form-control" id="Address2" />
+        </Field>
+    </div>
+    <div style="margin-bottom: 1rem" class="row">
+        <Field For="@(() => Input.Address.City)" Width="4" Required="true">
+            <RadzenTextBox @bind-Value="@Input.Address.City" class="form-control" id="City" />
+        </Field>
+        <Field For="@(() => Input.Address.PostalCode)" Width="4" Required="true">
+            <RadzenTextBox @bind-Value="@Input.Address.PostalCode" class="form-control" id="PostalCode" />
+        </Field>
+    </div>
+    <div style="margin-bottom: 1rem" class="row">
+        <Field For="@(() => Input.Address.State)" Width="4" Required="true">
+            <RadzenDropDown @bind-Value="Input.Address.State" TValue="string" Data="@States" ValueProperty="Key" TextProperty="Value" class="form-control" id="State" />
+        </Field>
+        <Field For="@(() => Input.Address.Country)" Width="4" Required="true">
+            <RadzenDropDown @bind-Value="Input.Address.Country" TValue="string" Data="@Countries" ValueProperty="Key" TextProperty="Value" class="form-control" id="Country" />
+        </Field>
+    </div>
+    <div style="margin-bottom: 1rem" class="row">
+        <Field For="@(() => Input.Address.Phone)" Width="4" Required="true">
+            <RadzenTextBox @bind-Value="@Input.Address.Phone" class="form-control" id="Phone" />
+        </Field>
+        <Field For="@(() => Input.Address.Referral)" Width="4" Text="How did you hear about us?" Required="true">
+            <RadzenTextBox @bind-Value="@Input.Address.Referral" class="form-control" id="Referral" />
+        </Field>
+    </div>
+
+    @if (!LogOnly)
+    {
+        <div id="PaymentDiv">
+            <p class="blue">Payment Method</p>
+            <RadzenRadioButtonList @bind-Value="Input.PaymentMethod" TValue="string" Orientation="Orientation.Vertical">
+                <Items>
+                    <RadzenRadioButtonListItem @key="1" Text="Credit Card USD (for United States)" Value="@StrCreditCardUsd" />
+                    <RadzenRadioButtonListItem @key="2" Text="Credit Card CAD (recommended for international)" Value="@StrCreditCardCad" />
+                    @if (ShowPayPal)
+                    {
+                        <RadzenRadioButtonListItem @key="3" Text="PayPal" Value="@StrPayPalForm" />
+                    }
+                </Items>
+            </RadzenRadioButtonList>
+            @*(<span style="font-size:smaller">@(await GetConvertedCadTotalString())</span>)*@
+            <div class="clear">&nbsp;</div>
+
+            @if (Input.CreditCard != null)
+            {
+                <div id="CreditCardInfo">
+                    <p class="blue">Enter Your Credit Card Information</p>
+                    <div style="margin-bottom: 1rem" class="row">
+                        <img id="imgCreditCard" src="/images/seal-visamastercard.gif" alt="Visa, Mastercard" />
+                    </div>
+                    <div style="margin-bottom: 1rem" class="row">
+                        <Field For="@(() => Input.CreditCard.CardNumber)" Required="true" Width="6">
+                            <RadzenTextBox @bind-Value="@Input.CreditCard.CardNumber" class="form-control" id="CardNumber" AutoComplete="false" />
+                        </Field>
+                    </div>
+                    <div style="margin-bottom: 1rem" class="row">
+                        <Field For="@(() => Input.CreditCard.ExpirationMonth)" Required="true" Width="3">
+                            <RadzenDropDown @bind-Value="Input.CreditCard.ExpirationMonth" TValue="int?" Data="@ExpirationMonths" ValueProperty="Key" TextProperty="Value" class="form-control" id="ExpirationMonth" Placeholder="Month" />
+                        </Field>
+                        <Field For="@(() => Input.CreditCard.ExpirationYear)" LabelWidth="1" Width="2" Text="/">
+                            <RadzenDropDown @bind-Value="Input.CreditCard.ExpirationYear" TValue="int?" Data="@ExpirationYears" ValueProperty="Key" TextProperty="Value" class="form-control" id="ExpirationYear" Placeholder="Year" />
+                        </Field>
+                    </div>
+                    <div style="margin-bottom: 1rem" class="row">
+                        <Field For="@(() => Input.CreditCard.SecurityCode)" Width="3" Required="true">
+                            <RadzenTextBox @bind-Value="@Input.CreditCard.SecurityCode" MaxLength="4" class="form-control" id="SecurityCode" />
+                        </Field>
+                    </div>
+                </div>
+                <div class="clear">&nbsp;</div>
+            }
+        </div>
+    }
+
+    @*<ValidationSummary />*@
+
+    <RadzenButton ButtonType="ButtonType.Submit" Text="ORDER" ButtonStyle="ButtonStyle.Primary" />
+    @if (!string.IsNullOrEmpty(Input.Error))
+    {
+        <div class="alert">
+            @Input.Error
+            <br />Please check your payment information and try again.
+        </div>
+    }
+</EditForm>

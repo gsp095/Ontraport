@@ -1,0 +1,75 @@
+﻿@page
+@model IndexModel
+@{
+    var layout = ViewData.Layout();
+    layout.Title = "Find Your Soul Purpose";
+    layout.Description = "Spiritual Self Transformation is about breaking out of depression and repression, living a life you love and stepping into your greater path and power.";
+    layout.Keywords = "self-transformation, energy healing, life purpose, spiritual freedom, health, wealth, abundance";
+    layout.FacebookLike = true;
+    layout.HeaderSubscribe = true;
+}
+@section Sidebar 
+{
+    <partial name="_BoxLatestArticles" />
+}
+<div class="productRow" style="padding-bottom: 30px; padding-top: 10px;">
+    <img src="~/images/img_etienne_home.jpg" width="200" height="200" alt="Etienne Charland" style="float: left; padding-left: 10px; padding-right: 15px;" />
+    <h1>Remember who you are ... and what you came here for</h1>
+    <p class="maindesc" style="padding-top: 10px; padding-right: 10px">
+        There are over 70 million starseeds incarnated on Earth right now. Are you one of them? You made a conscious choice to incarnate here at this time. What did you come here for? What is your mission? What is your purpose?
+    </p>
+    <p class="maindesc" style="padding-top: 10px; padding-right: 10px">
+        So many questions, so little answers. Etienne Charland, known as the Emergence Guardian&trade;, can lead you to discover yourself and recover your former powers.
+    </p>
+</div>
+<div class="productRow" style="padding-top: 6px">
+    @await Component.InvokeAsync(nameof(ProductBox), new
+    {
+        DisplayIndex = 1,
+        Height = 220,
+        LinkUrl = "https://www.forceoflife.net",
+        Title = "Free Training",
+        Image = "spirituality",
+        Text = "You know you have a higher purpose you are not living. Sign up for the <strong>Force of Life FREE Training</strong> to build a lifestyle of power, purpose and freedom."
+    })
+    @await Component.InvokeAsync(nameof(ProductBox), new
+    {
+        DisplayIndex = 2,
+        Height = 220,
+        LinkUrl = "~/soul-alignment-reading",
+        Title = "Soul Alignment Reading",
+        Image = "woman",
+        Text = "Get a general clean-up of your energy field to lift your consciousness up and bring awareness on the real issues holding your life back."
+    })
+    @await Component.InvokeAsync(nameof(ProductBox), new
+    {
+        DisplayIndex = 3,
+        Height = 220,
+        LinkUrl = "~/crystal-attunement",
+        Title = "Crystal Attunement",
+        Image = "crystal",
+        Text = "Attune your crystals into the higher Heavens to amplify their powers."
+    })
+</div>
+<div class="separatorline">
+    &nbsp;
+</div>
+<h2><a class="h2" href="~/about-us/testimonials">Testimonials</a></h2>
+<div class="productRow" style="padding-bottom: 20px">
+    <iframe width="203" height="114" src="//www.youtube-nocookie.com/embed/Gxed8FTnB2Y?rel=0;showinfo=0" frameborder="0" allowfullscreen style="padding-right:20px;"></iframe>
+    <iframe width="203" height="114" src="//www.youtube-nocookie.com/embed/0thY4WKT3CQ?rel=0;showinfo=0" frameborder="0" allowfullscreen style="padding-right:20px;"></iframe>
+    <iframe width="203" height="114" src="//www.youtube-nocookie.com/embed/t9vPSxZfPXI?rel=0;showinfo=0" frameborder="0" allowfullscreen></iframe>
+</div>
+@if (Model.Share)
+{
+    <script>
+        window.UpviralConfig = {
+            camp: "&&MGG",
+            widget_style: 'popup',
+            opacity: 0.60,
+            close_popup: 'yes',
+            close_days: '0',
+        }
+    </script>
+    <script language="javascript" src="https://snippet.upviral.com/upviral.js"></script>
+}

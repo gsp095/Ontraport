@@ -1,0 +1,12 @@
+﻿@page "/deposit"
+@inject BlazorQueryString query
+<Page Title="Deposit Order Form" />
+
+<OrderForm Product="@Product" EnablePayPal="false" />
+
+@code {
+    public OrderFormProduct Product => _product ?? (_product = new OrderFormProduct(ProductNames.Deposit, Price));
+    private OrderFormProduct? _product;
+
+    public decimal Price => query.GetInt32("p", 1, 10000) ?? 500;
+}

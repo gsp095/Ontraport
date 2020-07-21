@@ -1,0 +1,101 @@
+/* Lead page1 form style*/
+#loadcustomfield i{
+    background-color: râÌzÀ^ù¶Â;
+    line-height: normal;
+}
+/* Lead page2,Lead page4,Lead page7 form style*/
+#loadcustomfield dl dt span{
+    background-color: râÌzÀ^ù¶Â;
+    line-height: normal;
+}
+ .tour-step-three{ //display: block; }
+ 
+ .custom_icons i {
+    right: 0px;
+    position: absolute;
+    padding: 20px 20px;
+    font-size: x-large;
+    color: gray;
+    line-height: normal !important;
+    background:none;
+}
+ .background{background:#000;opacity:0.6;background-size:cover;position: fixed; width: 100%; z-index: -1; height:100%; top:0; left:0;}
+ .close{
+        opacity:1;
+        position: absolute;
+        width: 34px;
+        height: 34px;
+        background:url("https://app.upviral.com/assets/css/popup2/images/common/fancybox_sprite.png") !important;
+        right: -12px;
+        top: -19px;
+        z-index: 9;
+        float:right;
+    }
+
+    .close:hover{
+       opacity: 1;
+    }
+
+.right_side_widget .popupSection,.embed_popup .popupSection 
+{
+    display: block;
+    left: 50%;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+}
+.right_side_widget .popupSection.notransform,.embed_popup .popupSection.notransform {
+    -moz-transform: none;
+    -webkit-transform: none;
+    -o-transform: none;
+    -ms-transform: none;
+    transform: none;
+    margin: 30px auto;
+    top:0;
+    left:0;
+    right:0;
+}
+.widget-type-element {
+  padding: 5px 4px;
+  position: relative;
+  top: 0;
+  z-index:2;
+}
+.widget-type-form {
+  display: inline-block;
+  margin: 0px 3px;
+}
+.popbackbtn {
+  font-size: 16px;
+  padding: 5.4px 45px;
+  text-align: center;
+  color: #fff;
+  border: none;
+  background: #2DB9B0;
+  border-radius: 4px 4px 4px 4px;
+  float: left;
+}
+.embed_widget .close , .embed_widget .background{
+    display:none;
+}
+
+.embed_popup .background{
+    display:block;
+}
+.embed_popup .page_main { width:600px;}
+.embed_popup .close{
+    display:block;
+}
+
+#stack2 .modal-title , #stack1 .modal-title{
+  font-size:18px;
+}
+
+@media only screen and (max-width : 645px) {
+.embed_popup .page_main { width:90% !important;}
+}

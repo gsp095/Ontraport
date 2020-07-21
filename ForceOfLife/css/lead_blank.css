@@ -1,0 +1,189 @@
+.spacer20 {
+    width: 100%;
+    height: 20px;
+    clear:both;
+}
+
+.spacer30 {
+    width: 100%;
+    height: 30px;
+    clear:both;
+}
+
+.spacer40 {
+    width: 100%;
+    height: 40px;
+    clear:both;
+}
+
+.spacer50 {
+    width: 100%;
+    height: 50px;
+    clear:both;
+}
+
+#blank-template {
+    position: relative;
+    
+    /*transform: translateY(-10%);margin-top: 10%;*/
+}
+
+#blank-template p {
+    font-size: 16px;
+    margin: 0 0 10px;
+}
+
+#blank-template #loadcustomfield .form-control {
+    height: 47px !important;
+    margin-bottom: 5px; 
+    margin-top: 0px;
+    border: 1px solid #999999;
+}
+
+#blank-template input[type="submit"] {
+    /* background-color: #29bdb1; color: #fff;*/
+    
+    font-weight: bold;
+    padding: 14px 20px;
+    width: 100%;
+    text-transform: none;
+    font-size: 14px !important;
+}
+
+.center-col {
+    margin: 0px auto !important; float: none !important;
+}
+
+.copyright , .copyright a{
+    color: #999999;
+    font-size: 12px !important;
+}
+@charset "utf-8";
+/* CSS Document */
+
+body{
+    margin:0px;
+    padding:0px;
+    font-family: 'Open Sans', sans-serif;
+    background-position:center top;
+    background-size:cover;
+    background-repeat:no-repeat;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-family: 'Open Sans', sans-serif;
+}
+.zoSocial_container{
+    width:940px;
+    margin:0 auto;
+}
+.form-control.error:focus {
+    border-color: #C00;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(204,0,0,.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(204,0,0,.6);
+
+}
+
+.error{
+    color:#C00;
+    text-align:left;
+    margin:5px 0px;
+    font-size:13px; 
+}
+input, textarea {
+  max-width:100%
+}
+.contest_rules_text
+{
+    text-align:center;
+    cursor: pointer;
+}
+
+.form-horizontal .form-group {
+    margin-left : 0;
+}   
+
+#blank-template .embed_blank_form {
+    width: 90%;
+}
+#blank-template .int_blank_form {
+    width: 50%;
+}
+
+.embed_widget .main, .embed_popup .main {
+  margin: 0px auto;
+}
+.page{margin:0 auto; max-width:565px;}
+/* Start Responsive css */
+.main{display:block; overflow:hidden; clear:both; padding:22px; margin:50px 0; border:1px solid #beb7b3; background:rgba(255, 255, 255, 0.9); border-radius:8px; -webkit-border-radius:8px;text-align: center;}
+.embed_widget .main,.embed_popup .main{ margin:0px auto;}
+@media (max-width:1200px){
+    body{
+        background-size:inherit;
+    }
+    .zoSocial_container{
+        width:890px;
+    }
+    .landingPageForm {
+        margin-right: -5px;
+        margin-left: -5px;
+    }
+}
+@media (max-width:991px){
+    
+    .zoSocial_container{
+        width:740px;
+    }
+    .col-md-6 {
+        width: 50%;
+        float:left;
+    }
+    
+}
+
+@media (max-width:767px){
+    .zoSocial_container{
+        width:100%;
+    }
+    .col-md-6 {
+        width: 100%;
+    }
+    body.landing_page_with_input{
+        background-position:bottom;
+    }
+    input[type="text"]:focus, input[type="email"]:focus {
+        font-size: 16px; /* Adding 16px on focus will prevent page zoom */
+    }
+    #blank-template {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    
+}
+@media (max-width:550px){
+    
+    #blank-template .int_blank_form {
+    width: 100%;
+    padding-left: 7px;
+    padding-right: 7px;
+    }
+
+}
+@media (max-width:480px){
+    body{
+        background-size:cover;
+    }
+    .zoSocial_fromContainer{
+        padding:15px;   
+    }
+    .main{ padding: 20px;}
+
+}
+@media (max-width:360px){
+    
+
+}
+@media (max-width:320px){
+    
+}

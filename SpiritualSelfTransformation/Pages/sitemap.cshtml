@@ -1,0 +1,23 @@
+﻿@page
+@model SitemapModel
+@{
+    ViewData["Title"] = "Site Map";
+    ViewData["Description"] = "Indexed content of SpiritualSelfTransformation.com";
+    ViewData["Keywords"] = "spiritual self transformation, spiritual freedom, soul purpose, orion souls, what is alchemy, laws of the universe";
+}
+<h1>Sitemap</h1>
+@foreach (var item in Model.Builder.Urls)
+{
+    if (!string.IsNullOrEmpty(item.DisplayTitle))
+    {
+        var depth = item.ParentDepth;
+        if (item.Url != null)
+        {
+            <p @Html.Raw(depth > 0 ? $"style='margin-left:{depth * 30}px'" : null)><a href="@item.Url">@item.DisplayTitle</a></p>
+        }
+        else
+        {
+            <p style="@Html.Raw(depth > 0 ? $" margin-left:{depth * 30}px" : null)">@item.DisplayTitle</p>
+        }
+    }
+}

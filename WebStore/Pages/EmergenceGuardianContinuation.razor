@@ -1,0 +1,13 @@
+﻿@page "/emergence-guardian-continuation"
+@inject BlazorQueryString query
+<Page Title="Emergence Guardian Continuation Program Order Form" />
+
+<OrderForm Product="@Product" EnablePayPal="@EnablePayPal" OntraportFormId="p2c20557f56" />
+
+@code {
+    public OrderFormProduct Product => _product ?? (_product = new OrderFormProduct(ProductNames.EmergenceGuardianContinuationProgram, Price));
+    private OrderFormProduct? _product;
+
+    public decimal Price => query.GetInt32("p", 0, 10000) ?? 297;
+    public bool EnablePayPal => query.GetBool("paypal") ?? false;
+}

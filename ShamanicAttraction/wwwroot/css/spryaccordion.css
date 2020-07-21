@@ -1,0 +1,78 @@
+@charset "UTF-8";
+
+p {font-family:Arial, Helvetica, sans-serif; font-size:12px; font-weight:normal; color:#000;
+	margin:0px;
+	padding: 10px 0px 0px 0px;
+}
+.Accordion {width:620px; 
+	border-left: solid 1px gray;
+	border-right: solid 1px black;
+	border-bottom: solid 1px gray;
+	overflow: hidden; margin:0px; padding:0px; margin-top: 8px;
+}
+
+.AccordionLine {
+	border-bottom: 1px solid #ccc;
+	margin-top: 5px;
+}
+
+.AccordionPanel {
+	margin: 0px;
+	padding: 0px;
+}
+
+.AccordionPanelTab {
+	background-color:#669999;
+	border-top: solid 1px black;
+	border-bottom: solid 1px gray;
+	margin: 0px;
+	padding: 2px;
+	cursor: pointer;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	font-family:Arial, Helvetica, sans-serif; font-size:14px; font-weight:bold; color:#fff; line-height:30px; margin:0px; padding:0px 0px 0px 10px;
+}
+
+
+.AccordionPanelContent {font-family:Arial, Helvetica, sans-serif; font-size:12px; font-weight:normal; color:#000;
+	margin: 0px;
+	padding: 5px 10px 0px 10px; line-height:18px;
+	overflow: auto;
+	height:450px;
+}
+
+
+.AccordionPanelOpen .AccordionPanelTab {
+	background-color:#669999;
+}
+
+
+.AccordionPanelTabHover {
+	color: #fff;
+}
+.AccordionPanelOpen .AccordionPanelTabHover {
+	color: #fff;
+}
+
+
+.AccordionFocused .AccordionPanelTab {
+	background-color: #669999;
+}
+
+
+.AccordionFocused .AccordionPanelOpen .AccordionPanelTab {
+	background-color: #09456b;
+}
+
+@media print {
+
+  .Accordion {
+  overflow: visible !important;
+  }
+  
+  .AccordionPanelContent {
+  display: block !important;
+  overflow: visible !important;
+  height: auto !important;
+  }
+}

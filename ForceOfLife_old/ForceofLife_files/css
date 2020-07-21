@@ -1,0 +1,52 @@
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: italic;
+  font-weight: 200;
+  src: local('Source Sans Pro ExtraLight Italic'), local('SourceSansPro-ExtraLightItalic'), url(https://web.archive.org/web/20190110115558im_/https://fonts.gstatic.com/s/sourcesanspro/v11/6xKwdSBYKcSV-LCoeQqfX1RYOo3qPZYokSdi18E.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Source Sans Pro Italic'), local('SourceSansPro-Italic'), url(https://web.archive.org/web/20190110115558im_/https://fonts.gstatic.com/s/sourcesanspro/v11/6xK1dSBYKcSV-LCoeQqfX1RYOo3qPZ7psDc.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Source Sans Pro Regular'), local('SourceSansPro-Regular'), url(https://web.archive.org/web/20190110115558im_/https://fonts.gstatic.com/s/sourcesanspro/v11/6xK3dSBYKcSV-LCoeQqfX1RYOo3qNq7g.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Source Sans Pro SemiBold'), local('SourceSansPro-SemiBold'), url(https://web.archive.org/web/20190110115558im_/https://fonts.gstatic.com/s/sourcesanspro/v11/6xKydSBYKcSV-LCoeQqfX1RYOo3i54rwmRdr.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Source Sans Pro Bold'), local('SourceSansPro-Bold'), url(https://web.archive.org/web/20190110115558im_/https://fonts.gstatic.com/s/sourcesanspro/v11/6xKydSBYKcSV-LCoeQqfX1RYOo3ig4vwmRdr.ttf) format('truetype');
+}
+
+/*
+     FILE ARCHIVED ON 11:55:58 Jan 10, 2019 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 12:43:45 Apr 08, 2019.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  LoadShardBlock: 45.306 (3)
+  esindex: 0.007
+  captures_list: 93.006
+  CDXLines.iter: 14.251 (3)
+  PetaboxLoader3.datanode: 102.331 (5)
+  exclusion.robots: 0.281
+  exclusion.robots.policy: 0.267
+  RedisCDXSource: 20.758
+  PetaboxLoader3.resolve: 276.891 (2)
+  load_resource: 340.646
+*/

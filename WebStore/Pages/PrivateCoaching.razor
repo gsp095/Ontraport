@@ -1,0 +1,12 @@
+﻿@page "/private-coaching"
+@inject BlazorQueryString query
+<Page Title="1-on-1 Coaching Order Form" />
+
+<OrderForm Product="@Product" EnablePayPal="false" OntraportFormId="p2c20557f45"  />
+
+@code {
+    public OrderFormProduct Product => _product ?? (_product = new OrderFormProduct(ProductNames.PrivateCoaching, Price));
+    private OrderFormProduct? _product;
+
+    public decimal Price => query.GetInt32("p", 1, 10000) ?? 2500;
+}

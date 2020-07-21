@@ -1,0 +1,46 @@
+﻿@page "/"
+@using HanumanInstitute.CommonWeb.Ontraport
+@using OntraportApi.Models
+@using NodaTime 
+@inject IOntraportContacts contacts
+@inject IOntraportPaymentPlans plans
+@inject IRandomGenerator _random 
+
+<h1>Contact Custom Fields</h1>
+
+@if (contactFields == null)
+{
+    <p>Loading contact fields...</p>
+}
+else
+{
+    @foreach (var item in contactFields.Fields)
+    {
+        <p>@item.Key : @item.Value</p>
+    }
+}
+
+<h1>Payment Plan Custom Fields</h1>
+
+@if (planFields == null)
+{
+    <p>Loading payment plan fields...</p>
+}
+else
+{
+    @foreach (var item in planFields.Fields)
+    {
+        <p>@item.Key : @item.Value</p>
+    }
+}
+
+@code {
+    ResponseMetadata? contactFields;
+    ResponseMetadata? planFields;
+
+    protected override async Task OnInitializedAsync()
+    {
+        contactFields = await contacts.GetCustomFieldsAsync().ConfigureAwait(false);
+        ///planFields = await plans.GetCustomFieldsAsync().ConfigureAwait(false);
+    }
+}

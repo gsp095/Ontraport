@@ -1,0 +1,406 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  line-height: 60px; /* Vertically center the text there */
+}
+
+
+
+/*===== login form css =====*/
+
+.loginsform {
+    width: 100%;
+    display: inline-block;
+    background-size: 100% 100%;
+    height: 85.2vh;
+    vertical-align: middle;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.loginform-overlay {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.loginform-width {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+    transform: translate(0, 5vh);
+    box-shadow: 0 -3px 18px 0 #e2e2e2;
+    border: 1px solid #dcdcdc;
+    border-radius: 6px;
+}
+
+.tab button {
+    width: 49%;
+    text-align: center;
+}
+
+.tab button {
+    width: 50%;
+    height: 40px;
+    float: left;
+    background-color: #f7f7f7;
+    color: #000;
+    border: 1px solid #fff;
+    font-size: 17px;
+    font-weight: 400;
+    outline: none;
+    cursor: pointer;
+}
+
+.form-filed label {
+    border: none;
+    width: 100%;
+    display: inline-block;
+    text-align: justify;
+    font-size: 13px;
+    font-weight: 500;
+    color: #000;
+    margin-bottom: 2px;
+}
+
+.top-sign {
+    transform: translate(0, 4vh);
+    margin: 0 auto;
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+    .top-sign h4 {
+        font-size: 24px;
+        font-weight: 300;
+        letter-spacing: -0.5px;
+    }
+
+.form-filed input {
+    width: 100%;
+    border: 1px solid #cacaca !important;
+    background-color: #f7f7f7 !important;
+    box-sizing: border-box;
+    border-left: 1px solid;
+    border-right: 1px solid;
+    outline: none;
+    padding: 0 5px;
+    border-radius: 2px;
+    height: 35px;
+    box-shadow: 0 0 7px 0 #e6e4e4;
+}
+
+.tabsbody {
+    width: 100%;
+    max-width: 392px;
+    margin: 0 auto;
+}
+
+.form-filed {
+    margin-bottom: 17px;
+    width: 100%;
+    display: inline-block;
+}
+
+.tabsbody p {
+    margin-top: 17px;
+    width: 100%;
+    font-size: 17px;
+    font-weight: 500;
+    display: inline-block;
+}
+
+.submit-button {
+    margin: 8px 0;
+}
+
+.formterm p {
+    font-size: 12px;
+    text-align: center;
+    font-weight: 400;
+}
+
+span.forgotpas a {
+    text-decoration: underline !important;
+    color: #000;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.tablinks.active {
+    background: #e8e8e8 !important;
+    padding: 0;
+    color: #000;
+}
+
+@media (max-width: 767px) {
+    .loginsform {
+        height: 100%;
+    }
+
+    .formterm,
+    .tabsbody {
+        padding: 0 7px;
+    }
+}
+
+
+/*===== login form css end =====*/
+
+
+
+/*===== Contact Us page start =====*/
+
+section #contact-page {
+    background-image: url(../images/contactbac.jpg);
+}
+
+a.btn-default:hover {
+    color: #fff !important;
+    background-image: linear-gradient(23deg, #d86100, red);
+}
+
+.active p:nth-child(1) {
+    font-size: 22px;
+    font-weight: 600;
+    font-size: 25px;
+    font-weight: 500;
+}
+
+address {
+    font-size: 16px;
+    font-weight: 400;
+    margin: 10px 0;
+    text-transform: lowercase;
+}
+
+.contact a {
+    font-size: 16px;
+    font-weight: 400;
+    color: #000;
+}
+
+.socialmedia a {
+    font-size: 16px;
+    font-weight: 400;
+    color: #000;
+    margin-right: 8px;
+}
+
+.contact {
+    margin: 15px 0px;
+}
+
+.socialmedia {
+    margin: 10px 0;
+}
+
+form#contactform label {
+    width: 100%;
+    margin: 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: #000;
+}
+
+.namefiled input {
+    background-position: right 8px center;
+    background-repeat: no-repeat;
+    border: 1px solid #d1d5da;
+    border-radius: 3px;
+    box-shadow: inset 0 1px 2px rgba(27,31,35,.075);
+    color: #24292e;
+    font-size: 14px;
+    line-height: 20px;
+    min-height: 34px;
+    padding: 6px 8px;
+    vertical-align: middle;
+    width: 65%;
+}
+
+.namefiled {
+    width: 100%;
+    padding: 0 15px 0 0;
+    float: left;
+    display: inline-block;
+    margin-bottom: 17px;
+}
+
+.textarea {
+    display: inline-block;
+    width: 100%;
+    padding: 0 15px 0 0;
+}
+
+    .textarea textarea {
+        background-color: #fff;
+        background-position: right 8px center;
+        background-repeat: no-repeat;
+        border: 1px solid #d1d5da;
+        border-radius: 3px;
+        box-shadow: inset 0 1px 2px rgba(27,31,35,.075);
+        color: #24292e;
+        font-size: 14px;
+        line-height: 20px;
+        min-height: 34px;
+        padding: 6px 8px;
+        vertical-align: middle;
+        width: 100%;
+        height: 160px;
+    }
+
+.submit {
+    width: 50%;
+    margin-top: 10px;
+    margin-left: auto;
+    text-align: right;
+    padding: 0 15px 0 0;
+}
+
+section.contact-body {
+    width: 100%;
+    padding: 50px 10px;
+    display: inline-block;
+}
+
+.contactformbody {
+    box-shadow: 0 0 5px 0 #d2d2d2;
+    border-radius: 4px;
+    padding: 20px 10px;
+}
+
+.name h5 {
+    font-size: 17px;
+    font-weight: 500;
+    color: #008080;
+    line-height: 25px;
+}
+
+.contactformbody h5 {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.adressbody {
+    box-shadow: 0 0 5px 0 #d2d2d2;
+    border-radius: 4px;
+    padding: 20px 10px;
+    height: 283px;
+    vertical-align: middle;
+}
+
+@media (max-width: 767px) {
+    .namefiled {
+        width: 100%;
+        padding: 10px;
+        float: inherit;
+        display: inherit;
+        margin-bottom: 17px;
+    }
+
+    .textarea {
+        display: inherit;
+        width: 100%;
+        padding: 10px;
+    }
+
+    .adressbody {
+        margin-bottom: 25px;
+    }
+
+    .namefiled label {
+        margin-bottom: 10px !important;
+    }
+
+    form#contactform label {
+        margin: 0 0 8px 0;
+    }
+
+    .submit {
+        width: 100%;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 1100px) and (min-width: 768px) {
+    .nav_buttons .btn-default.h6 {
+        width: 100%;
+        display: inline-block;
+        background-color: #a6d785;
+        outline: none;
+        padding: 12px 0;
+        text-align: center;
+        text-decoration: none;
+    }
+}
+
+/*===== Contact Us page End =====*/
+
+.btn-default {
+    width: 48%;
+    display: inline-block;
+    outline: none;
+    background-color: #d86100;
+    padding: 12px 0;
+    text-align: center;
+    color: hsla(0,0%,100%,.75) !important;
+    cursor: pointer;
+}

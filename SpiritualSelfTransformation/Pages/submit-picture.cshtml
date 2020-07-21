@@ -1,0 +1,75 @@
+﻿@page
+@model HanumanInstitute.SpiritualSelfTransformation.Pages.SubmitPictureModel
+@{
+    var layout = ViewData.Layout();
+    layout.Title = "Submit Picture Form";
+    layout.SidebarVisible = false;
+    layout.Description = "Submit your picture and information.";
+    layout.Keywords = "distance healing, distant healing, free distance healing, remote healing, remote energy healing, free remote healing, energy healing, reiki, eft, reiki distance healing, holistic healing";
+}
+    <h1>Submit your picture and information</h1>
+<form method="post" class="form" enctype="multipart/form-data">
+    <table border="0" cellspacing="0" cellpadding="0">
+        <tr>
+            <td width="80"><label asp-for="Input.Gender" class="required"></label></td>
+            <td>
+                @foreach (var item in Model.Genders)
+                {
+                    <input type="radio" asp-for="Input.Gender" value="@item" id="Gender@(item)" /><label for="Gender@(item)" style="padding-right:15px;"> @item </label>
+                }
+                <span asp-validation-for="Input.Gender" class="text-danger"></span>
+            </td>
+        </tr>
+        <tr>
+            <td><label asp-for="Input.Email" class="required"></label></td>
+            <td>
+                <input asp-for="Input.Email" class="input large" />
+                <span asp-validation-for="Input.Email" class="text-danger"></span>
+            </td>
+        </tr>
+        <tr>
+            <td><label asp-for="Input.Age" class="required"></label></td>
+            <td>
+                <input type="text" asp-for="Input.Age" class="input large" />
+                <span asp-validation-for="Input.Age" class="text-danger"></span>
+            </td>
+        </tr>
+        <tr>
+            <td><label asp-for="Input.Country" class="required"></label></td>
+            <td>
+                @Html.DropDownListFor(x => x.Input.Country, Model.Countries.Select(x => new SelectListItem(x.Value, x.Key)),
+                    new { @class = "input large" })
+                <span asp-validation-for="Input.Country" class="text-danger"></span>
+            </td>
+        </tr>
+
+        <tr>
+            <td><label asp-for="Input.Picture" class="required"></label></td>
+            <td>
+                <input type="file" asp-for="Input.Picture" />
+                <span asp-validation-for="Input.Picture" class="text-danger"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>
+                <p>Your picture must:</p>
+                <ul>
+                    <li>Be a picture of you</li>
+                    <li>Clearly show a front view of your face</li>
+                    <li>Be in JPG, GIF or PNG format.</li>
+                    <li>Maximum file size: 2MB.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <input type="submit" value="SUBMIT" class="submitbox" />
+            </td>
+        </tr>
+    </table>
+</form>
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

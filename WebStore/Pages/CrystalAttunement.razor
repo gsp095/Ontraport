@@ -1,0 +1,47 @@
+﻿@page "/crystal-attunement"
+<Page Title="Crystals Amplifier Order Form" />
+
+<OrderForm Products="@Products" ReturnUrl="https://www.spiritualselftransformation.com/submit-picture" OntraportFormId="p2c20557f49" ValidatingCoupon="ValidateCoupon" Processing="Processing" Guarantee="365 Days" />
+
+@code {
+    public List<OrderFormProduct> Products => _products ?? (_products = new List<OrderFormProduct>() {
+        new OrderFormProduct(ProductNames.CrystalAttunement, 197) {
+            Display = "Crystal Attunement (4 crystals types)"
+        },
+        new OrderFormProduct(ProductNames.CrystalAttunement, 25) {
+            Display = "Additional crystals",
+            Quantity = 0,
+            AllowEditQuantity = true
+        }
+    });
+    private List<OrderFormProduct>? _products;
+
+    public void ValidateCoupon(ValidatingCouponEventArgs e)
+    {
+        var prod = Products[0];
+        prod.Price = 197;
+        prod.Quantity = 1;
+
+        if (string.Compare(e.CouponCode, "four", StringComparison.InvariantCultureIgnoreCase) == 0)
+        {
+            e.IsValid = true;
+            e.Message = "Already purchased four";
+            prod.Quantity = 0;
+        }
+        else if (string.Compare(e.CouponCode, "more", StringComparison.InvariantCultureIgnoreCase) == 0)
+        {
+            e.IsValid = true;
+            e.Message = "$50 discount";
+            prod.Price -= 50;
+        }
+    }
+
+    public void Processing(OrderProcessingEventArgs e)
+    {
+        // Flatten both product rows into a single item.
+        var total = e.Order.Products.Sum(x => x.Price * x.Quantity);
+        e.Order.Products.RemoveAt(1);
+        e.Order.Products[0].Quantity = 1;
+        e.Order.Products[0].Price = total;
+    }
+}

@@ -1,0 +1,9 @@
+﻿@page "/result-oriented-spirituality"
+<Page Title="Result-Oriented Spirituality Order Form" />
+
+<OrderForm Product="@Product" OntraportFormId="p2c20557f42" ReturnUrl="https://www.shamanicattraction.com/files/resultorientedspirituality.pdf" Guarantee="365 Days" />
+
+@code {
+    public OrderFormProduct Product => _product ?? (_product = new OrderFormProduct(ProductNames.ResultOrientedSpirituality, 27));
+    private OrderFormProduct? _product;
+}

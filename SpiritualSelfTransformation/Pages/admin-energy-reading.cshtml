@@ -1,0 +1,39 @@
+﻿@page
+@model HanumanInstitute.SpiritualSelfTransformation.Pages.AdminEnergyReadingModel
+@{
+    var layout = ViewData.Layout();
+    layout.Title = "Admin: Soul Alignment Reading Result";
+    layout.SidebarVisible = false;
+}
+@section Head {
+    <meta name="robots" content="noindex" />
+}
+<h1>Admin: Soul Alignment Reading Result</h1>
+<form method="post" class="form">
+    <p><label asp-for="Input.Email" class="required"></label></p>
+    <input asp-for="Input.Email" class="input" style="width:400px" />
+    <span asp-validation-for="Input.Email" class="text-danger"></span>
+
+    <p><label asp-for="Input.EnergyReading" class="required"></label></p>
+    <textarea asp-for="Input.EnergyReading" class="inputbox" style="width:400px; height:300px;"></textarea>
+    <span asp-validation-for="Input.EnergyReading" class="text-danger"></span>
+
+    <p><label asp-for="Input.DistanceHealing" class="required"></label></p>
+    <textarea asp-for="Input.DistanceHealing" class="inputbox" style="width:400px; height:80px;"></textarea>
+    <span asp-validation-for="Input.DistanceHealing" class="text-danger"></span>
+
+    <p><label asp-for="Input.Password" class="required"></label></p>
+    <input asp-for="Input.Password" class="input" style="width:400px" />
+    <span asp-validation-for="Input.Password" class="text-danger"></span>
+
+    <p>&nbsp;</p>
+    <input type="submit" value="SUBMIT" class="submitbox" />
+    <p>&nbsp;</p>
+</form>
+@if (Model.PictureUrl != null)
+{
+    <img src="@Model.PictureUrl" />
+}
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

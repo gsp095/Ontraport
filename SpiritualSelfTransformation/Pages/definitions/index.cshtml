@@ -1,0 +1,49 @@
+﻿@page
+@{
+    var layout = ViewData.Layout();
+    layout.Title = "Inner Alchemy, Spiritual Healing, Emotions, Chakras";
+    layout.Description = "What is inner alchemy, what are chakras, what are emotions, what is spirituality";
+    layout.Keywords = "definition, inner alchemy, royal alchemy, spiritual healing, soul purpose, emotions, emotional power, what are emotions, what are chakras, chakra healing, spirituality";
+}
+@section Sidebar {
+    <partial name="_boxsubscribe" />
+}
+<div class='sitemap hoverlink'><h1><span><span><a href="~/">Soul Purpose</a></span><span> &gt; </span><span><a class="dark" href="~/definitions/">Definitions</a></span></span></h1></div>
+<div class='language hoverlink'><a href='~/definitions/' class='dark'>English</a> | <a href='~/definitions/fr/'>Français</a> | <a href='~/definitions/es/'>Español</a></div><div style='clear:both'></div>
+
+<div class="productRow">
+    @await Component.InvokeAsync(nameof(ProductBox), new
+    {
+        DisplayIndex = 1,
+        Height = 200,
+        LinkUrl = "~/definitions/what-is-alchemy",
+        Title = "Alchemy",
+        Text = "Art of transmutation of energies and transmutation of self."
+    })
+    @await Component.InvokeAsync(nameof(ProductBox), new
+    {
+        DisplayIndex = 2,
+        Height = 200,
+        LinkUrl = "~/definitions/what-are-chakras",
+        Title = "Chakras",
+        Text = "Wheels of Life, main energy centers of your body."
+    })
+    @await Component.InvokeAsync(nameof(ProductBox), new
+    {
+        DisplayIndex = 3,
+        Height = 200,
+        LinkUrl = "~/definitions/what-are-emotions",
+        Title = "Emotions",
+        Text = "Energies in motion causing a psychophysiological experience."
+    })
+</div>
+<div class="productRow">
+    @await Component.InvokeAsync(nameof(ProductBox), new
+    {
+        DisplayIndex = 1,
+        Height = 200,
+        LinkUrl = "~/definitions/what-is-spirituality",
+        Title = "Spirituality",
+        Text = "Science of your energetic and emotional systems."
+    })
+</div>

@@ -1,0 +1,4 @@
+Server configuration files
+
+.conf goes in /etc/apache2/sites-available/
+.service goes in /etc/systemd/system/

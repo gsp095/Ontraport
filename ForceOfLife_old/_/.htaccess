@@ -1,0 +1,52 @@
+DirectoryIndex index.php
+
+RewriteEngine On
+RewriteBase /
+
+# add www before domain
+RewriteCond %{HTTP_HOST} ^forceoflife.net$ [NC]
+RewriteRule ^(.*)$ https://www.forceoflife.net/$1 [L,R=301]
+
+# show default.aspx if querystring is empty
+# RewriteCond %{THE_REQUEST} ^GET\ (.*)\.aspx\ HTTP
+# RewriteRule ^default.aspx$ / [R=301,L]
+# RewriteRule ^default$ / [R=301,L]
+
+# RewriteCond %{REQUEST_URI} ^/$
+# RewriteCond %{QUERY_STRING} ^$ [OR]
+# RewriteCond %{QUERY_STRING} ^_ga=.*$ [OR]
+# RewriteCond %{QUERY_STRING} ^r=.*$ [OR]
+# RewriteCond %{QUERY_STRING} ^__utma=.*$
+# RewriteRule (.*) /default.aspx [L]
+
+# confirmation page
+# RewriteCond %{THE_REQUEST} ^GET\ (.*)\.aspx\ HTTP
+# RewriteRule ^confirm.aspx$ /confirm [R=301]
+# RewriteRule ^confirm$ /confirm.aspx [L]
+
+RewriteRule ^tuneup$ https://www.spiritualselftransformation.com/energy-tune-up [R=301,L]
+
+# add .html to access file, but don't redirect
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteCond %{REQUEST_URI} !/$
+RewriteRule (.*) $1\.html [L]
+
+# show index.php if there are parameters in url
+# RewriteCond %{REQUEST_URI} ^/$
+# RewriteRule (.*) /index.php [L]
+
+# RewriteCond %{REQUEST_FILENAME} !-f
+# RewriteCond %{REQUEST_FILENAME} !-d
+# RewriteRule . /index.php [L]
+
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+
+# END WordPress

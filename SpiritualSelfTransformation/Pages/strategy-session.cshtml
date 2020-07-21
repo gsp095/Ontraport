@@ -1,0 +1,24 @@
+﻿@page
+@model CoachingFormModel
+@{
+    var layout = ViewData.Layout();
+    layout.Title = "Apply for a Strategy Session";
+    layout.Description = "Looking to uplevel your life? Apply for a strategy session to get crystal clear on what you want to achieve and what's preventing you from being there.";
+    layout.Keywords = "strategy session, psychic reading, spiritual life coach, spiritual, self, transformation, spiritual transformation";
+}
+@section Sidebar {
+    <partial name="_BoxAboutEtienne" />
+}
+<h1>Apply for a Strategy Session</h1>
+<p>
+    Looking to uplevel your life? Apply for a strategy session to get crystal clear on what
+    you want to achieve, get crystal clear on what's preventing you from being there, and
+    explore the best options to get you where you want to be.
+</p>
+<p>This is a 30 minutes call with Etienne Charland for those who are serious about moving forward.</p>
+<p class="bold">You must listen to the first 4 audios of the <a href="https://www.forceoflife.net">Force of Life Training</a> before applying for a Spiritual Laser Focus Session.</p>
+<p>The main criteria to be accepted for this complimentary session is: are you showing up fully?</p>
+@await Component.InvokeAsync(nameof(Components.CoachingForm), new { model = Model })
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -1,0 +1,105 @@
+.jqueryslidemenu{
+font: bold 12px Verdana;
+/*background: #414141;*/
+width:574px;
+float:right;
+margin-top:54px; 
+}
+
+.jqueryslidemenu ul{
+margin: 0;
+padding: 0;
+list-style-type: none;
+}
+
+/*Top level list items*/
+.jqueryslidemenu ul li{
+position: relative;
+display: inline;
+float: left;
+float:left;font:15px/30px Arial, Helvetica, sans-serif; text-transform:uppercase; height:30px;/* width:140px; */text-align:left; margin-right:1px;
+-x-system-font:none;
+/*color:#fff;*/
+margin-right:1px;
+padding-bottom:0;
+padding:0px 0px 0px 5px !important; 
+padding-top:0;
+text-transform:uppercase;
+}
+
+.jqueryslidemenu ul li a.active{background-color:#638da6;color:#FFFFFF;}
+
+.jqueryslidemenu ul li a {
+color:#669999;
+/*padding-right:5px;*/
+text-decoration:none; padding:0px 5px !important;
+float:left;margin-right:5px;
+}
+
+/*Top level menu link items style*/
+
+
+.jqueryslidemenu ul li a:hover{background-color:#638da6;padding:0px 5px !important;  float:left;margin-right:5px;}
+.jqueryslidemenu ul li ul li a:hover{background:none !important;}
+.jqueryslidemenu ul li.active a{ color:#FFFFFF;}
+
+* html .jqueryslidemenu ul li a{ /*IE6 hack to get sub menu links to behave correctly*/
+display: inline-block;
+}
+
+/*1st sub level menu*/
+.jqueryslidemenu ul li ul{
+position: absolute;
+left: 0;
+display: block;
+visibility: hidden;
+z-index:5;
+}
+
+
+
+/*Sub level menu list items (undo style from Top level List Items)*/
+.jqueryslidemenu ul li ul li{
+display: list-item;
+float: none;
+}
+
+/*All subsequent sub menu levels vertical offset after 1st level sub menu */
+.jqueryslidemenu ul li ul li ul{
+top: 0;
+}
+.jqueryslidemenu ul li ul{  width:172px !important; left:4px !important; }
+/* Sub level menu links style */
+.jqueryslidemenu ul li ul li{
+ width: 172px;/*width of sub menus*/
+margin: 0;background:url(../images/bg-menu.png) repeat-y !important;
+font:15px/30px Arial, Helvetica, sans-serif !important;
+padding-top:0px !important;
+text-transform:lowercase !important;
+height:30px !important;
+border-bottom: 1px solid #8594a7;
+
+}
+
+.jqueryslidemenu ul li ul li a{ width: 171px;padding:0px 9px 0px 0px;height:30px !important;padding-top:0px !important;font:15px/30px Arial, Helvetica, sans-serif !important;text-transform:lowercase !important; color:#fff !important;}
+.jqueryslidemenu ul li ul li a:hover{ /*sub menus hover style*/
+/*background: url(../images/arrow-white.gif) no-repeat  2pt #0067ac !important;*/
+color:#ffffff !important;text-decoration:underline;
+display:block;padding:0px 9px 0px 0px;width: 171px;height:30px !important;
+font:15px/30px Arial, Helvetica, sans-serif !important;padding-top:0px !important;text-transform:lowercase !important;
+}
+
+/* ######### CSS classes applied to down and right arrow images  ######### */
+
+/*.downarrowclass{
+position: absolute;
+top: 12px;
+right: 7px;
+}
+
+.rightarrowclass{
+position: absolute;
+top: 6px;
+right: 5px;
+}
+*/

@@ -1,0 +1,35 @@
+﻿@page
+@model HanumanInstitute.SpiritualSelfTransformation.Pages.AdminGodConnectionModel
+@{
+    var layout = ViewData.Layout();
+    layout.Title = "Admin: God Connection Attunement Result";
+    layout.SidebarVisible = false;
+}
+@section Head {
+    <meta name="robots" content="noindex" />
+}
+<h1>Admin: God Connection Attunement Result</h1>
+<form method="post" class="form">
+    <p><label asp-for="Input.Email" class="required"></label></p>
+    <input asp-for="Input.Email" class="input" style="width:400px" />
+    <span asp-validation-for="Input.Email" class="text-danger"></span>
+
+    <p><label asp-for="Input.Notes"></label></p>
+    <textarea asp-for="Input.Notes" class="inputbox" style="width:400px; height:300px;"></textarea>
+    <span asp-validation-for="Input.Notes" class="text-danger"></span>
+
+    <p><label asp-for="Input.Password" class="required"></label></p>
+    <input asp-for="Input.Password" class="input" style="width:400px" />
+    <span asp-validation-for="Input.Password" class="text-danger"></span>
+
+    <p>&nbsp;</p>
+    <input type="submit" value="SUBMIT" class="submitbox" />
+    <p>&nbsp;</p>
+</form>
+@if (Model.PictureUrl != null)
+{
+    <img src="@Model.PictureUrl" />
+}
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

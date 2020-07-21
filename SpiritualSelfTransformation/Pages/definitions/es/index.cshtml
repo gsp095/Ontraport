@@ -1,0 +1,40 @@
+﻿@page
+@{
+    var layout = ViewData.Layout();
+    layout.Title = "Alquimia interna, Espiritualidad";
+    layout.Description = "Que es la alquimia, emociones and espiritualidad.";
+    layout.Keywords = "definiciones, que es, alquimia, espiritualidad, emociones";
+    layout.Language = "es";
+}
+@section Sidebar {
+    <partial name="_boxsubscribe" />
+}
+<div class='sitemap hoverlink'><h1><span><span><a href="~/">Home</a></span><span> &gt; </span><span><a class="dark" href="~/definitions/es/">Definiciones</a></span></span></h1></div>
+<div class='language hoverlink'><a href='~/definitions/'>English</a> | <a href='~/definitions/fr/'>Français</a> | <a href='~/definitions/es/' class='dark'>Español</a></div><div style='clear:both'></div>
+
+<div class="productRow">
+    @await Component.InvokeAsync(nameof(ProductBox), new
+    {
+        DisplayIndex = 1,
+        Height = 200,
+        LinkUrl = "~/definitions/es/que-es-alquimia",
+        Title = "Alquimia",
+        Text = "Arte de la trasmutación de las energías y del ser."
+    })
+    @await Component.InvokeAsync(nameof(ProductBox), new
+    {
+        DisplayIndex = 2,
+        Height = 200,
+        LinkUrl = "~/definitions/es/que-son-emociones",
+        Title = "Emociones",
+        Text = "Energías en movimiento que causan una experiencia psicofisiológica."
+    })
+    @await Component.InvokeAsync(nameof(ProductBox), new
+    {
+        DisplayIndex = 3,
+        Height = 200,
+        LinkUrl = "~/definitions/es/que-es-espiritualidad",
+        Title = "Espiritualidad",
+        Text = "Ciencia de tus sistemas energéticos y espirituales."
+    })
+</div>

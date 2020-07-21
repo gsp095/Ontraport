@@ -1,0 +1,22 @@
+﻿@page
+@model SitemapModel
+@{
+    ViewData["Title"] = "Site Map";
+    ViewData["Description"] = "Indexed content of Satrimono.com";
+    ViewData["Keywords"] = "book, publishing, metatron, federation of light, truth, life, love, freedom, history of universe, disclosure";
+}
+@foreach (var item in Model.Builder.Urls)
+{
+    if (!string.IsNullOrEmpty(item.DisplayTitle))
+    {
+        var depth = item.ParentDepth;
+        if (item.Url != null)
+        {
+            <p @Html.Raw(depth > 0 ? $"style='margin-left:{depth * 30}px'" : null)><a href="@item.Url">@item.DisplayTitle</a></p>
+        }
+        else
+        {
+            <p style="margin-top:24px;@Html.Raw(depth > 0 ? $" margin-left:{depth * 30}px" : null)">@item.DisplayTitle</p>
+        }
+    }
+}

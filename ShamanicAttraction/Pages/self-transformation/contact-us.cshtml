@@ -1,0 +1,94 @@
+﻿@page
+@model ShamanicAttraction.Pages.ContactUsModel
+@{
+    var layout = ViewData.Layout();
+    layout.Title = "Contact Etienne Charland";
+}
+@section SideBar {
+    <partial name="_BoxSubscribe" />
+    <partial name="_BoxPromo" />
+}
+<div class="productRow">
+    <h1>
+        <img src="~/images/pht_etienne_charland_2.jpg" alt="image" align="right" style="padding-left: 20px;" />Contact
+        Etienne Charland
+    </h1>
+    <div>
+        <a href="https://www.facebook.com/HanumanInstitute" target="_blank" style="color: #4E4A49; font: 12px Arial,Helvetica,sans-serif;
+                text-decoration: none;">
+            <img alt="Facebook" src="~/images/facebook.gif" />
+            Facebook
+        </a><br />
+        <a href="https://twitter.com/etiennecharland" target="_blank" style="color: #4E4A49; font: 12px Arial,Helvetica,sans-serif;
+                text-decoration: none;">
+            <img alt="Twitter" src="~/images/twitter.gif" />
+            Twitter
+        </a> <a href="https://www.youtube.com/becharismatic" target="_blank" style="color: #4E4A49;
+                    font: 12px Arial,Helvetica,sans-serif; text-decoration: none;">
+            <br />
+            <img alt="YouTube" src="~/images/ytube.gif" />
+            YouTube
+        </a>
+    </div>
+    <p>
+        1082 Main Street North<br />
+        Richmond, QC<br />
+        Canada  J0B 2H0
+    </p>
+    <p>Telephone: 1-800-987-2402</p>
+    <p>&nbsp;</p>
+    <p>Send us an email!</p>
+    <form method="post" class="form">
+        <table border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td width="20%">
+                    <label asp-for="Input.Name" class="required"></label>
+                </td>
+                <td width="80%">
+                    <input asp-for="Input.Name" class="input large" />
+                    <span asp-validation-for="Input.Name" class="text-danger"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label asp-for="Input.Email" class="required"></label><br />
+                    <br />
+                </td>
+                <td>
+                    <input asp-for="Input.Email" class="input large" />
+                    <span asp-validation-for="Input.Email" class="text-danger"></span>
+                    <br />
+                    <br />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label asp-for="Input.Message" class="required"></label>
+                </td>
+                <td>
+                    <textarea asp-for="Input.Message" class="form-control" style="width:400px; height:150px;"></textarea><br />
+                    <span asp-validation-for="Input.Message" class="text-danger"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Two plus two equals... (in letters): *
+                </td>
+                <td>
+                    <input asp-for="Input.Challenge" class="input large" />
+                    <span asp-validation-for="Input.Challenge" class="text-danger"></span>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <br />
+                    <input type="submit" value="SEND" class="submitbox" />
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

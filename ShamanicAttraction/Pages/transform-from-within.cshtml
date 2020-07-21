@@ -1,0 +1,70 @@
+﻿@page
+@model ShamanicAttraction.Pages.TransformFromWithinModel
+@{
+    var layout = ViewData.Layout();
+    layout.Title = "Best Attract Women Books";
+    layout.Description = "Best books and products to change from within to attract the RIGHT women.";
+    layout.Keywords = "attract women, best attract women books, sexual attraction, sexual magnetism, animal magnetism, authentic charisma, result oriented spirituality, attraction mastery club, authentic attraction";
+}
+@section Sidebar {
+    <partial name="_BoxArrowDown" />
+    <partial name="_BoxArrowDownLeft" />
+}
+<h1 style="margin-bottom: 10px;">
+    "Do you want to attract the RIGHT women to consistently and effortlessly
+    enjoy satisfying sexual experiences &#8212;without drama?"
+</h1>
+<p>
+    If so, claim your <span class="red">FREE 3-Part Audio Course</span>, <strong>
+        "Transform from Within to
+        Attract Women"
+    </strong> which covers:
+</p>
+<div style="margin: 0 40px;">
+    <ul class="checklist2">
+        <li>7 Benefits of Self-Transformation</li>
+        <li>10 Mistakes Men Make With Women</li>
+        <li>4 Reasons Not to Pursue Women</li>
+        <li>7 Misconceptions of Spirituality</li>
+        <li>7 Ways to Attract Women</li>
+        <li>4 Reasons Why People Get Stuck</li>
+        <li>How to Heal Your Fears</li>
+    </ul>
+</div>
+<p>Simply register to our mailing list to get it.<br />We have a zero-spam policy.</p>
+<center class="actionbox">
+    <form method="post">
+        <table border="0" cellspacing="0" cellpadding="0" class="form">
+            <tr>
+                <td>
+                    <label asp-for="Input.Name" class="required"></label>
+                </td>
+                <td>
+                    <input asp-for="Input.Name" class="input large" /><br />
+                    <span asp-validation-for="Input.Name" class="text-danger"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label asp-for="Input.Email" class="required"></label>
+                </td>
+                <td>
+                    <input asp-for="Input.Email" class="input large" /><br />
+                    <span asp-validation-for="Input.Email" class="text-danger"></span>
+                </td>
+            </tr>
+        </table>
+        <div style="padding-top: 10px;">
+            <img src="~/images/lock.png" alt="lock" width="16" height="16" align="top" />
+            No spam. Unsubscribe any time.
+        </div>
+        <input type="submit" value="SUBSCRIBE" class="submitbox" />
+    </form>
+    @*<p>You can download Transform From Within to Attract Women here:</p>
+        <p><a href="https://www.shamanicattraction.com/files/transformtoattractwomen1.mp3" target="_blank">Part 1</a></p>
+        <p><a href="https://www.shamanicattraction.com/files/transformtoattractwomen2.mp3" target="_blank">Part 2</a></p>
+        <p><a href="https://www.shamanicattraction.com/files/transformtoattractwomen3.mp3" target="_blank">Part 3</a></p>*@
+</center>
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

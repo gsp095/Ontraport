@@ -1,0 +1,17 @@
+﻿@page
+@model RemoteHealingTech.Areas.Subscribe.Pages.FreeTrialModel
+@{
+}
+<h2>Select the service(s) for which to start a free trial</h2>
+<partial name="_StatusMessage" for="StatusMessage" />
+<form method="post">
+@for (int i=0; i < Model.Products.Count(); i++)
+{
+    <input type="hidden" asp-for="@Model.Products[i].Id" />
+    <input type="checkbox" asp-for="@Model.Products[i].Selected" />
+    <label asp-for="@Model.Products[i].Selected" style="font-size:20px">@Model.Products[i].Name</label>
+    <a asp-page="@Model.Products[i].InfoPage">(more info)</a>
+    <p>@Model.Products[i].Message</p>
+}
+    <input type="submit" value="Next"/>
+</form>

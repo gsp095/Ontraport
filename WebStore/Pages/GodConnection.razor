@@ -1,0 +1,9 @@
+﻿@page "/god-connection"
+<Page Title="Connection Attunement Order Form" />
+
+<OrderForm Product="@Product" ReturnUrl="https://www.spiritualselftransformation.com/submit-picture" OntraportFormId="p2c20557f59" Guarantee="365 Days" />
+
+@code {
+    public OrderFormProduct Product => _product ?? (_product = new OrderFormProduct(ProductNames.GodConnectionAttunement, 497));
+    private OrderFormProduct? _product;
+}

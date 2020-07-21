@@ -1,0 +1,38 @@
+﻿@using System.Linq.Expressions;
+
+<Field For="@For" ForId="@ForId" Text="@Text" Width="@Width" LabelWidth="@LabelWidth" Required="@Required">
+    <RadzenTextBox @attributes="AdditionalAttributes" class="form-control" id="@GetUniqueId()" />
+</Field>
+
+@code {
+    [Parameter(CaptureUnmatchedValues = true)]
+    public IDictionary<string, object>? AdditionalAttributes { get; set; }
+
+    [Parameter]
+    public Expression<Func<object?>>? For { get; set; }
+
+    [Parameter]
+    public string? ForId { get; set; }
+
+    [Parameter]
+    public string? Text { get; set; }
+
+    [Parameter]
+    public int Width { get; set; } = 10;
+
+    [Parameter]
+    public int LabelWidth { get; set; } = 2;
+
+    [Parameter]
+    public bool Required { get; set; } = false;
+
+    private string GetUniqueId()
+    {
+        if (For != null)
+        {
+            var expression = For.Body as MemberExpression ?? (MemberExpression)((UnaryExpression)For.Body).Operand;
+            return ForId ?? expression.Member.Name;
+        }
+        return string.Empty;
+    }
+}

@@ -1,0 +1,66 @@
+﻿@page
+@model ContactModel
+@{
+    ViewData["ActiveIndex"] = 5;
+    ViewData["Title"] = "Contact Us";
+    ViewData["Description"] = "Contact us at Satrimono Publishing";
+    ViewData["Keywords"] = "spiritual transformation, laws of the universe, metatron, federation of light, ascension, disclosure, life purpose, soul purpose, consciousness shift, life, love";
+}
+<div class="row">
+    <div class="col-sm-4">
+        <p>
+            <b class="text-uppercase">Satrimono Publishing</b><br>
+        </p>
+        <p>
+            1082 Main Street North<br>
+            Richmond, QC<br>
+            Canada J0B 2H0
+        </p>
+        <p><i class="fa fa-phone" aria-hidden="true"></i>+1-888-606-4837</p>
+        <div class="social-icons mar-top-15">
+            <a href="https://www.facebook.com/satrimono/" target="_blank" class="trs"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+            <a href="https://twitter.com/satrimono" target="_blank" class="trs" style="background: #39a9e0;"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+        </div>
+    </div>
+    <div class="col-sm-8">
+        <h3 class="sub-head">Send us an email!</h3>
+        <div class="contact-form">
+            <form method="post">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <label asp-for="Input.Name" class="control-label required"></label>
+                        <input asp-for="Input.Name" class="form-control" />
+                        <span asp-validation-for="Input.Name" class="text-danger"></span>
+                    </div>
+                    <div class="col-sm-6">
+                        <label asp-for="Input.Email" class="control-label required"></label>
+                        <input asp-for="Input.Email" class="form-control" />
+                        <span asp-validation-for="Input.Email" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <label asp-for="Input.Message" class="control-label required"></label>
+                        <textarea asp-for="Input.Message" class="form-control"></textarea>
+                        <span asp-validation-for="Input.Message" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <label class="control-label required">Two plus two equals... (in letters):</label>
+                        <input asp-for="Input.Challenge" class="form-control" />
+                        <span asp-validation-for="Input.Challenge" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <input type="submit" value="Send Message" class="btn btn-primary send-btn trs" />
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

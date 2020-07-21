@@ -1,0 +1,9 @@
+﻿@page "/powerliminals-nonrivalry"
+<Page Title="Non-Rivalry Powerliminals Order Form" />
+
+<OrderForm Product="@Product" OntraportFormId="p2c20557f44" Guarantee="365 Days" />
+
+@code {
+    public OrderFormProduct Product => _product ?? (_product = new OrderFormProduct(ProductNames.PowerliminalsNonRivalry, 197));
+    private OrderFormProduct? _product;
+}

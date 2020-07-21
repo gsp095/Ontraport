@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.352
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShamanicAttraction", "..\ShamanicAttraction\ShamanicAttraction.csproj", "{C6DE300F-C12C-4103-B4D0-4452BB56A34C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7CA9C0CC-A55D-4B06-B9AE-822B62E6A08E}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OntraportApi", "..\..\..\GitHub\OntraportApi.NET\OntraportApi\OntraportApi.csproj", "{63193B05-3D4D-40FD-A1CD-6DE8E2AF1590}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OntraportApi.AspNetCore", "..\..\..\GitHub\OntraportApi.NET\OntraportApi.AspNetCore\OntraportApi.AspNetCore.csproj", "{BAFC4D9A-0B3C-44D2-B64B-B15B99F8A9C9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommonWeb", "..\CommonWeb\CommonWeb.csproj", "{AACFCD7A-55A2-4823-89CA-5C65FBBF17D3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommonWebApp", "..\CommonWebApp\CommonWebApp.csproj", "{D873BCA5-D1E6-4CCF-BD01-724F3E4E1C4A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C6DE300F-C12C-4103-B4D0-4452BB56A34C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6DE300F-C12C-4103-B4D0-4452BB56A34C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6DE300F-C12C-4103-B4D0-4452BB56A34C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6DE300F-C12C-4103-B4D0-4452BB56A34C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63193B05-3D4D-40FD-A1CD-6DE8E2AF1590}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63193B05-3D4D-40FD-A1CD-6DE8E2AF1590}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63193B05-3D4D-40FD-A1CD-6DE8E2AF1590}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63193B05-3D4D-40FD-A1CD-6DE8E2AF1590}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BAFC4D9A-0B3C-44D2-B64B-B15B99F8A9C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAFC4D9A-0B3C-44D2-B64B-B15B99F8A9C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAFC4D9A-0B3C-44D2-B64B-B15B99F8A9C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAFC4D9A-0B3C-44D2-B64B-B15B99F8A9C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AACFCD7A-55A2-4823-89CA-5C65FBBF17D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AACFCD7A-55A2-4823-89CA-5C65FBBF17D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AACFCD7A-55A2-4823-89CA-5C65FBBF17D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AACFCD7A-55A2-4823-89CA-5C65FBBF17D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D873BCA5-D1E6-4CCF-BD01-724F3E4E1C4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D873BCA5-D1E6-4CCF-BD01-724F3E4E1C4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D873BCA5-D1E6-4CCF-BD01-724F3E4E1C4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D873BCA5-D1E6-4CCF-BD01-724F3E4E1C4A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7E8212BB-9CE7-4566-8ECD-86DF99DDD2E2}
+	EndGlobalSection
+EndGlobal

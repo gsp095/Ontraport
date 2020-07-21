@@ -1,0 +1,23 @@
+﻿@page
+@{
+    var layout = ViewData.Layout();
+    layout.Title = "Join our mailing list";
+}
+@section Sidebar {
+    <partial name="_BoxPromo" />
+}
+@section Head  {
+    <meta name="robots" content="noindex">
+}
+<div class="productRow">
+    <h1>Thanks for joining. You will receive a confirmation email within a few minutes.</h1>
+    <p>&nbsp;</p>
+    @*<object type="application/x-shockwave-flash" data="http://flash-mp3-player.net/medias/player_mp3_maxi.swf"
+            width="200" height="20">
+        <param name="movie" value="http://flash-mp3-player.net/medias/player_mp3_maxi.swf" />
+        <param name="bgcolor" value="#ffffff" />
+        <param name="FlashVars" value="mp3=https://www.shamanicattraction.com/images/doubleoptin.mp3&amp;autoplay=1" />
+    </object>*@
+    <p>&nbsp;</p>
+    <p><a href="~/">Continue to home page >></a></p>
+</div>

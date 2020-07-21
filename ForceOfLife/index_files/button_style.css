@@ -1,0 +1,431 @@
+.lead_btn
+{
+    width: 100%;
+}
+.lead_btn:focus, .fb_btn:focus{
+    outline: 0 !important;
+}
+#lead_button_gly , #fb_button_gly, .glycus
+{
+    right: 1px;
+}
+.lead_btn.style1
+{
+    text-transform: uppercase;
+    font-size: 16px !important;
+    padding: 0px 45px;
+    height: 47px;
+    text-align: center;
+    border: none;
+    border-radius: 4px;
+    opacity:0.8;
+}
+.leadpage8 .lead_btn.style1 , .leadpage8.embed_widget .fb-handle.style1 .fb_btn
+{
+ opacity:1;
+ font-weight: bold
+}
+.leadpage8 .lead_btn.style1:hover , .leadpage8.embed_widget .fb_btn.style1:hover
+{
+ opacity:0.8 !important;
+}
+
+.lead_btn.style1.glyphicon{
+    position: absolute;
+    padding: 0px;
+    pointer-events: none;
+    border: none;
+    border-radius: 0px 4px 4px 0px !important;
+    margin: -1px;
+    width: 46px;
+    height: 47px;
+    opacity:0.8;
+}
+
+.glyphicon-arrow-right:before
+{
+    padding-top: 15px;
+    display: inline-block;
+}
+/******style2******/
+
+.lead_btn.style2
+{
+    text-transform: uppercase;
+    font-size: 16px !important;
+    padding: 0px 45px;
+    height: 47px;
+    text-align: center;
+    border: none;
+    border-radius: 30px !important;
+    opacity:0.8;
+}
+.lead_btn.style2.glyphicon {
+    position: absolute;
+    padding: 0px;
+    pointer-events: none;
+    border: none;
+    border-radius: 0px 30px 30px 0px !important;
+    margin: -1px;
+    width: 46px;
+    height: 47px;
+    opacity:0.8;
+}
+ 
+/******style3******/
+
+.lead_btn.style3 {
+    text-transform: uppercase;
+    font-size: 16px !important;
+    padding: 0px 45px;
+    height: 47px;
+    text-align: center;
+}
+
+/******style4******/
+
+.lead_btn.style4 {
+    text-transform: uppercase;
+    font-size: 16px !important;
+    padding: 0px 45px;
+    height: 47px;
+    text-align: center;
+    border-radius:30px !important;
+}
+
+/*****style5*******/
+
+.lead_btn.style5
+{
+    text-transform: uppercase;
+    font-size: 16px;
+    padding: 0px 45px;
+    height: 47px;
+    text-align: center;
+    opacity:0.8;
+}
+
+/*****style6*******/
+
+.lead_btn.style6
+{
+    text-transform: uppercase;
+    font-size: 16px;
+    padding: 0px 45px;
+    height: 47px;
+    text-align: center;
+    border-radius: 30px;
+    opacity:0.8;
+}
+
+/*****style7*******/
+.lead_btn.style7
+{
+    text-transform: uppercase;
+    font-size: 16px !important;
+    padding: 0px 45px;
+    height: 47px;
+    text-align: center;
+    border: none;
+    border-radius: 4px !important;
+    opacity:0.8;
+}
+
+/*****style8*******/
+
+.lead_btn.style8
+{
+    text-transform: uppercase;
+    font-size: 16px !important;
+    padding: 0px 45px;
+    height: 47px;
+    text-align: center;
+    border: none;
+    border-radius: 30px !important;
+    opacity:0.8;
+}
+/*Hover*/
+.lead_btn.style1:hover ,.lead_btn.style2:hover ,.lead_btn.style5:hover ,.lead_btn.style7:hover ,.lead_btn.style1:hover ,.lead_btn.style8:hover{
+    opacity:1 !important;
+}
+
+/**background image**/
+#bg-color {
+    height: 95px!important;
+    width: 95px!important;
+    padding: 0px;
+    background: url(../img/lead/colo_icon.jpg)!important;
+    background-repeat: no-repeat!important;
+    border: 12px solid #F3F3F3;
+    border-radius: 5px!important;
+    margin-right: 4px;
+    vertical-align: top;
+}
+
+#bg-custom-1 {
+    height: 95px!important;
+    width: 95px!important;
+    padding: 0px;
+    background: url(../img/lead/clouds_icon.jpg)!important;
+    background-repeat: no-repeat!important;
+    border: 12px solid #F3F3F3;
+    border-radius: 5px!important;
+    margin-right: 4px;
+    vertical-align: top;
+}
+#bg-custom-2 {
+    height: 95px!important;
+    width: 95px!important;
+    padding: 0px;
+    background: url(../img/lead/flare_icon.jpg)!important;
+    background-repeat: no-repeat!important;
+    border: 12px solid #F3F3F3;
+    border-radius: 5px!important;
+    margin-right: 4px;
+    vertical-align: top;
+}
+#bg-custom-3 {
+    height: 95px!important;
+    width: 95px!important;
+    padding: 0px;
+    background: url(../img/lead/grass_icon.jpg)!important;
+    background-repeat: no-repeat!important;
+    border: 12px solid #F3F3F3;
+    border-radius: 5px!important;
+    margin-right: 4px;
+    vertical-align: top;
+}
+#bg-custom-4 {
+    height: 95px!important;
+    width: 95px!important;
+    padding: 0px;
+    background: url(../img/lead/upload_icon.jpg)!important;
+    background-repeat: no-repeat!important;
+    border: 12px solid #F3F3F3;
+    border-radius: 5px!important;
+    margin-right: 4px;
+    vertical-align: top;
+}
+#bg-custom-5 {
+    height: 95px!important;
+    width: 95px!important;
+    padding: 0px;
+    background: url(../img/lead/girl.jpg)!important;
+    background-repeat: no-repeat!important;
+    border: 12px solid #F3F3F3;
+    border-radius: 5px!important;
+    margin-right: 4px;
+    vertical-align: top;
+}
+#bg-custom-ofc-5 {
+    height: 95px!important;
+    width: 95px!important;
+    padding: 0px;
+    background: url(../img/lead/ofc.jpg)!important;
+    background-repeat: no-repeat!important;
+    border: 12px solid #F3F3F3;
+    border-radius: 5px!important;
+    margin-right: 4px;
+    vertical-align: top;
+}
+#bg-custom-6 {
+    height: 95px!important;
+    width: 95px!important;
+    padding: 0px;
+    background: url(../img/lead/banner.jpg)!important;
+    background-repeat: no-repeat!important;
+    border: 12px solid #F3F3F3;
+    border-radius: 5px!important;
+    margin-right: 4px;
+    vertical-align: top;
+}
+#bg-custom-8 {
+    height: 95px!important;
+    width: 95px!important;
+    padding: 0px;
+    background: url(../img/lead/custom-img8)!important;
+    background-repeat: no-repeat!important;
+    border: 12px solid #F3F3F3;
+    border-radius: 5px!important;
+    margin-right: 4px;
+    vertical-align: top;
+}
+#bg-custom-9 {
+    height: 95px!important;
+    width: 95px!important;
+    padding: 0px;
+    background: url(../img/lead/custom-img9)!important;
+    background-repeat: no-repeat!important;
+    border: 12px solid #F3F3F3;
+    border-radius: 5px!important;
+    margin-right: 4px;
+    vertical-align: top;
+}
+#discuss_bg {
+    height: 95px!important;
+    width: 95px!important;
+    padding: 0px;
+    background: url(../img/lead/discuss.jpg)!important;
+    background-repeat: no-repeat!important;
+    border: 12px solid #F3F3F3;
+    border-radius: 5px!important;
+    margin-right: 4px;
+    vertical-align: top;
+}
+
+#board_bg {
+    height: 95px!important;
+    width: 95px!important;
+    padding: 0px;
+    background: url(../img/lead/board_bg.jpg)!important;
+    background-repeat: no-repeat!important;
+    border: 12px solid #F3F3F3;
+    border-radius: 5px!important;
+    margin-right: 4px;
+    vertical-align: top;
+}
+
+
+.lead_bg .radio 
+{
+    display:none;
+}
+.selectedLeadBG {
+    border: 12px solid #22C793!important;
+}
+.leadbackbtn
+{
+    font-size: 16px;
+    padding: 8px 45px;
+    text-align: center;
+    color: #fff;
+    border: none;
+    background: #29bdb1;
+    position: absolute;
+    top: 10px;
+    left: 10px
+}
+.leadbackbtn:hover
+{
+    color: #fff;
+}
+
+/************* Meghna Fb button styles*****************/
+.right_side_widget .fb-handle #fb_button.fb_btn
+{
+     height: 75px;
+}
+.fb_button,.fb-handle .fb_btn{
+    text-transform: none !important;
+    height: 75px !important;
+    width: 100%;
+    text-align: center;
+    font-size: 22px !important;
+    font-weight: 600 !important; 
+    outline: none;
+    font-family: 'lucida grande', tahoma, verdana, arial, sans-serif !important;
+}
+.fb_button:focus{
+    outline: none;
+}
+.fb-handle .fb_btn.style1{
+    border: none;
+    opacity:0.8;
+    border-radius: 4px !important;
+}
+.fb-handle .fb_btn.style2{
+    border: none;
+    opacity:0.8;
+    border-radius: 40px !important;
+}
+.leadpage3 .fb-handle, .leadpage5 .fb-handle {
+    width: 60%;
+    margin: 0 auto;
+}
+.fb-handle .fb_btn.style3 {
+    border-radius: 4px !important;
+}
+.fb-handle .fb_btn.style4 {
+    opacity:0.8;
+    border-radius:40px !important;
+}
+.fb-handle .fb_btn.style5{
+    opacity:0.8;
+    border-radius: 4px !important;
+}
+.fb-handle .fb_btn.style6{
+    border-radius: 40px !important;
+}
+.fb-handle .fb_btn.style7{
+    border: none;
+     opacity:0.8;
+    border-radius: 4px !important;
+}
+.fb-handle .fb_btn.style8{
+    border: none;
+    opacity:0.8;
+    border-radius: 40px !important;
+}
+.glyphicon-arrow-right:before{
+    padding-top: 15px;
+    display: inline-block;
+}
+.fb-handle .fb_btn.style1.glyphicon {
+    position: absolute;
+    padding: 0px;
+    pointer-events: none;
+    border: none;
+    border-radius: 0px 4px 4px 0px !important;
+    margin: -1px; 
+    width: 46px;
+    height: 47px
+}
+.fb-handle .fb_btn.style2.glyphicon {
+    border: medium none;
+    border-radius: 0 40px 40px 0 !important;
+    height: 58px;
+    margin: -1px;
+    padding: 11px;
+    pointer-events: none;
+    position: absolute;
+    width: 54px;
+}
+.fb-handle .fb_btn.style1.glyphicon::before {
+    display: inline-block;
+    height: 74px;
+    width: 26px;
+}
+
+
+.fb-handle .fb_btn.style2.glyphicon::before {
+    display: inline-block;
+    height: 50px;
+    width: 26px;
+}
+
+/*Hover*/
+.fb-handle .fb_btn.style1:hover ,.fb-handle .fb_btn.style2:hover ,.fb-handle .fb_btn.style5 ,.fb-handle .fb_btn.style6:hover ,.fb-handle .fb_btn.style7:hover ,.fb-handle .fb_btn.style8:hover{
+    opacity:1;
+}
+/**************Smily editor***************/
+span.fr-emoticon.fr-emoticon-img
+{
+background-repeat: no-repeat !important;
+    display: inline-block;
+    font-size: inherit;
+    height: 1em;
+    line-height: 1;
+    margin: -0.1em 0.1em 0.1em;
+    min-height: 20px;
+    min-width: 20px;
+    vertical-align: middle;
+    width: 1em;
+}  
+.custom_icon
+{
+    font-size:9px;font-weight:bold;
+}
+.custom-btn{
+    padding: 12px !important;
+    text-transform: none !important;
+}

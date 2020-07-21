@@ -1,0 +1,124 @@
+﻿@model HanumanInstitute.SpiritualSelfTransformation.Components.CoachingFormModel
+<form method="post" class="form">
+    <table border="0" cellspacing="0" cellpadding="0">
+        <tr>
+            <td width="200"><label asp-for="Input.Gender" class="required"></label></td>
+            <td>
+                @foreach (var item in Model.Genders)
+                {
+                    <input type="radio" asp-for="Input.Gender" value="@item" id="Gender@(item)" /><label for="Gender@(item)" style="padding-right:15px;"> @item </label>
+                }
+                <span asp-validation-for="Input.Gender" class="text-danger"></span>
+            </td>
+        </tr>
+        <tr>
+            <td><label asp-for="Input.FirstName" class="required"></label></td>
+            <td>
+                <input asp-for="Input.FirstName" class="input large" />
+                <span asp-validation-for="Input.FirstName" class="text-danger"></span>
+            </td>
+        </tr>
+        <tr>
+            <td><label asp-for="Input.LastName" class="required"></label></td>
+            <td>
+                <input asp-for="Input.LastName" class="input large" />
+                <span asp-validation-for="Input.LastName" class="text-danger"></span>
+            </td>
+        </tr>
+        <tr>
+            <td><label asp-for="Input.Age" class="required"></label></td>
+            <td>
+                <input type="text" asp-for="Input.Age" class="input large" />
+                <span asp-validation-for="Input.Age" class="text-danger"></span>
+            </td>
+        </tr>
+        <tr>
+            <td><label asp-for="Input.Country" class="required"></label></td>
+            <td>
+                @Html.DropDownListFor(x => x.Input.Country, Model.Countries.Select(x => new SelectListItem(x.Value, x.Key)),
+                    new { @class = "input large" })
+                <span asp-validation-for="Input.Country" class="text-danger"></span>
+            </td>
+        </tr>
+        <tr>
+            <td><label asp-for="Input.Email" class="required"></label></td>
+            <td>
+                <input asp-for="Input.Email" class="input large" />
+                <span asp-validation-for="Input.Email" class="text-danger"></span>
+            </td>
+        </tr>
+        <tr>
+            <td><label asp-for="Input.Telephone" class="required"></label></td>
+            <td>
+                <input asp-for="Input.Telephone" class="input large" />
+                <span asp-validation-for="Input.Telephone" class="text-danger"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>What do you truly want to accomplish? *</td>
+            <td>
+                <textarea asp-for="Input.Goals"></textarea><br />
+                <span asp-validation-for="Input.Goals" class="text-danger"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>What issues are you currently experiencing? * </td>
+            <td>
+                <textarea asp-for="Input.Issues"></textarea><br />
+                <span asp-validation-for="Input.Issues" class="text-danger"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>What steps have you taken to overcome these issues? * </td>
+            <td>
+                <textarea asp-for="Input.Steps"></textarea><br />
+                <span asp-validation-for="Input.Steps" class="text-danger"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>Why is NOW your time to transform? * </td>
+            <td>
+                <textarea asp-for="Input.Transform"></textarea><br />
+                <span asp-validation-for="Input.Transform" class="text-danger"></span>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">On a scale of 0-10, how would you rate... </td>
+        </tr>
+        <tr>
+            <td>...the intensity of your pain? * </td>
+            <td>
+                <input type="text" asp-for="Input.RatePain" class="input short" />
+                <span asp-validation-for="Input.RatePain" class="text-danger"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>...your desire to change? * </td>
+            <td>
+                <input type="text" asp-for="Input.RateDesire" class="input short" />
+                <span asp-validation-for="Input.RateDesire" class="text-danger"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>...your urgency to change? * </td>
+            <td>
+                <input type="text" asp-for="Input.RateUrgency" class="input short" />
+                <span asp-validation-for="Input.RateUrgency" class="text-danger"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>What income do you aim to generate in the next 12 months? * </td>
+            <td>
+                <input asp-for="Input.Income" class="input large" />
+                <span asp-validation-for="Input.Income" class="text-danger"></span>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <br />
+                <input type="submit" value="SUBMIT" class="submitbox" />
+            </td>
+        </tr>
+    </table>
+</form>

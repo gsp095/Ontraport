@@ -1,0 +1,80 @@
+﻿@page
+@model BookAccuracyListModel
+@{
+    ViewData["ActiveIndex"] = 4;
+    ViewData["Title"] = "Book Accuracy List";
+    ViewData["Description"] = "Many people are confused and don't know what to believe in anymore. This book list measures the accuracy and vibrational level on the Hawkins scale of many popular books. This will help you put all this knowledge in its proper context and help open your mind for more truth.";
+    ViewData["Keywords"] = "hawkins scale, accuracy reading, muscle testing, metatron, federation of light, kinesiology, how to do muscle testing, truth, energy reading, psychic reading, soul purpose, spirituality, science of spirituality, spiritual transformation, spiritual freedom, free";
+}
+<div class="row">
+    <div class="owner-text text-center">
+        <p>
+            <i class="fa fa-quote-left" aria-hidden="true"></i>
+            Half of the information available online regarding spirituality, consciousness and disclosure is governmental disinformation;<br>
+            the other half is partial misinformation.<i class="fa fa-quote-right" aria-hidden="true"></i> &mdash; Etienne Charland
+        </p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <p>Many people are confused and don't know what to believe in anymore. This book list measures the accuracy and vibrational level on the Hawkins scale of many popular books. This will help you put all this knowledge in its proper context and help open your mind for more truth.</p>
+        <p class="small"><a href="how-to-measure-hawkins-scale">Here's how to measure or validate the accuracy and vibration yourself.</a> Accuracy level is self-explanatory. 50% accuracy means 50% true and 50% false. <br />If you're not familiar with the Hawkins scale of consciousness, <a href="https://www.google.com/search?q=hawkins+scale+of+consciousness" target="_blank">search about it online</a> or <a href="http://amzn.to/2jYsQ67" target="_blank">read David Hawkins' book Power vs Force</a>.</p>
+    </div>
+</div>
+<partial name="Shared/_ShareBar" />
+
+<div id="FilterSection" class="row" runat="server">
+    <div class="col-sm-12">
+        <p>
+            <asp:Label ID="lblAuthor" runat="server" Font-Bold="true"></asp:Label>
+            <a href="book-accuracy-list"></a>
+        </p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <div>
+            <form method="get">
+                <p>
+                    Find by name: <input type="text" name="search" value="@Model.Search" />
+                    <input type="submit" value="Search" /> |
+                    <a asp-page="book-accuracy-list">Back to Full List</a>
+                </p>
+            </form>
+            <table class="book-list-table table-striped mar-top-15" cellspacing="0" rules="all" border="1" style="border-collapse:collapse;">
+                <tr>
+                    <th scope="col"><a asp-route-search="@Model.Search" asp-route-author="@Model.Author" asp-route-sort="@Model.TitleSortParam">@Html.DisplayNameFor(model => model.Books.First().Title)</a></th>
+                    <th scope="col"><a asp-route-search="@Model.Search" asp-route-author="@Model.Author" asp-route-sort="@Model.AuthorSortParam">@Html.DisplayNameFor(model => model.Books.First().Author)</a></th>
+                    <th align="center" scope="col"><a asp-route-search="@Model.Search" asp-route-author="@Model.Author" asp-route-sort="@Model.AccuracySortParam">@Html.DisplayNameFor(model => model.Books.First().Accuracy)</a></th>
+                    <th align="center" scope="col"><a asp-route-search="@Model.Search" asp-route-author="@Model.Author" asp-route-sort="@Model.VibrationSortParam">@Html.DisplayNameFor(model => model.Books.First().Vibration)</a></th>
+                    <th scope="col">Link</th>
+                </tr>
+                @foreach (var item in Model.Books)
+                {
+                    <tr>
+                        <td>
+                            <a asp-page="book-accuracy-list-detail" asp-route-key="@item.Key">
+                                @Html.DisplayFor(modelItem => item.Title)
+                                @if (!string.IsNullOrEmpty(item.Subtitle))
+                                {
+                                    <span class='subtitle'>: @Html.DisplayFor(modelItem => item.Subtitle)</span>
+                                }
+                            </a>
+                        </td>
+                        <td>
+                            <a asp-page="book-accuracy-list" asp-route-author="@item.Author">@Html.DisplayFor(modelItem => item.Author)</a>
+                        </td>
+                        <td align="center">@Html.DisplayFor(modelItem => item.Accuracy)</td>
+                        <td align="center">@Html.DisplayFor(modelItem => item.Vibration)</td>
+                        <td>
+                            @if (!string.IsNullOrEmpty(item.Url))
+                            {
+                                <a href="@item.Url" target="_blank">Buy</a>
+                            }
+                        </td>
+                    </tr>
+                }
+            </table>
+        </div>
+    </div>
+</div>

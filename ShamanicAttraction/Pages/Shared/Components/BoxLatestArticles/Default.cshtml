@@ -1,0 +1,15 @@
+﻿@model IEnumerable<ShamanicAttraction.ViewComponents.RssItem>
+<div class="sidebar">
+    <h2>Latest Articles</h2>
+    <ul class="menu">
+        @foreach (var item in Model)
+        {
+            <li>
+                <a href="@item.Uri">@Html.Raw(item.Title)</a>
+            </li>
+        }
+    </ul>
+</div>
+<div class="sidebarbottom">
+    &nbsp;
+</div>

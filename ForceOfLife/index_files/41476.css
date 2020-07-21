@@ -1,0 +1,52 @@
+body {
+    background: url('https://app.upviral.com//images/lead_page_bg/custom-img2.jpg');
+    background-repeat: no-repeat;
+   -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed !important;
+}
+
+
+.zoSocial_fromContainer
+{
+    border-top: 6px solid ;
+}
+.wrapper,.right_side_widget,.embed_widget,.embed_popup
+{
+    direction: ltr}
+
+.embed_widget dd,.embed_popup dd {
+    -webkit-margin-start:0;
+}
+.powered
+{
+    position:fixed;
+    right:1px;
+    bottom:1px;
+}
+.powered img
+{
+    width:60px;
+}
+.get-started
+{   
+    border-top: 4px solid ;
+}
+
+.fb_optin_btn{ border: none;height: 75px;width:100%;}
+.embed_popup { background:none;} 
+.em-captcha.embed_widget{background: #fff;}
+.em-captcha .popupSection{background-color:#fff;padding: 5px 0;}
+.captcha-top{color: #4E6063;margin-top: 50px;font-family:Georgia;}
+.g-recaptcha{margin-bottom:50px;}
+.g-recaptcha > div {margin: 0 auto;}
+.captcha-top p {text-align: center;width: 85%;}
+@media only screen and (max-width : 480px) {
+    .mainwrapper {
+        height: 100%;
+        overflow-y: auto; 
+    }
+}

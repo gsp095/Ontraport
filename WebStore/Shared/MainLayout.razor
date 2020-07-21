@@ -1,0 +1,48 @@
+﻿@inherits LayoutComponentBase
+
+<div id="pagelanding">
+    <div id="wrapper">
+        <div class="header">
+            <div class="logo">
+                <img class="logoimg" src="/images/logo-header.png" height="84" width="84" alt="Spiritual Self Transformation" />
+                <h1 class="logotext">Spiritual Self&nbsp;Transformation</h1>
+            </div>
+            <div class="rightheader">
+                <div class="tag">
+                    Remember Who You Are
+                </div>
+            </div>
+        </div>
+        <div class="middleDiv">
+            <div class="leftPanel alpha" id="LeftPanel">
+                <div class="productRow">
+                    @Body
+                    <div class="clear">
+                        &nbsp;
+                    </div>
+                </div>
+            </div>
+            <div id="Sidebar" class="rightPanel">
+            </div>
+        </div>
+    </div>
+    <div id="footerarealanding">
+        <div id="footerlanding">
+            <div class="footerleftlanding">
+                <div class="footerlogo">
+                    <a href="http://www.spiritualselftransformation.com" onclick="return OpenLink(this);">
+                        <img src="/images/footer-logo.png" alt="Spiritual Self Transformation"
+                             style="position: relative; left: -10px;" />
+                    </a>
+                </div>
+            </div>
+            <div class="clear">
+            </div>
+            <div class="copyright" style="margin-top: 0px">
+                Copyright &copy; <a href="http://www.spiritualselftransformation.com"
+                                    target="_top" onclick="return OpenLink(this);">Spiritual Self Transformation</a>
+                2008-@DateTime.UtcNow.Year. All Right Reserved.
+            </div>
+        </div>
+    </div>
+</div>

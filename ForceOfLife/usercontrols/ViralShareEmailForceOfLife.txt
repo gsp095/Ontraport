@@ -1,0 +1,16 @@
+﻿Hey {0}, this is {1}.
+
+I just signed up for the Force of Life FREE Training 
+and thought about you.
+
+The Force of Life is your emotional drive and power, 
+the fuel powering joy, creativity and passion.
+
+Take a look and see if this training can help you!
+
+http://www.forceoflife.net/?r=80
+
+Love,
+
+{1}
+{2}

@@ -1,0 +1,16 @@
+﻿@page
+@model HanumanInstitute.RemoteHealingTech.Areas.Ontraport.IndexModel
+@{
+}
+@if (Model._contactFields == null)
+{
+    <p>Loading contact fields...</p>
+}
+else
+{
+    <h3>Ontraport Contact Custom Fields</h3>
+    @foreach (var item in Model._contactFields.Fields)
+    {
+        <p>@item.Key : @item.Value</p>
+    }
+}

@@ -1,0 +1,25 @@
+﻿@page "/sexual-magnetism"
+@inject BlazorQueryString query
+<Page Title="Sexual Magnetism Order Form" />
+
+<OrderForm Products="@products" OntraportFormId="@formId" ReturnUrl="@returnUrl" />
+
+@code {
+    private List<OrderFormProduct>? products;
+    private string formId = "p2c20557f36";
+    private string returnUrl = "https://www.shamanicattraction.com/econfirmation7";
+
+    protected override void OnInitialized()
+    {
+        products = new List<OrderFormProduct>()
+        {
+            new OrderFormProduct(ProductNames.SexualMagnetism, 7)
+        };
+        if (query.Params["upgrade"] != null)
+        {
+            products.Add(new OrderFormProduct(ProductNames.AuthenticAttraction, 20));
+            formId = "p2c20557f38";
+            returnUrl += "?upgrade=xa";
+        }
+    }
+}

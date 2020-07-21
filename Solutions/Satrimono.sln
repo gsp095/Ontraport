@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28922.388
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D22E2AED-87D5-40A2-9168-1FC5C2EF56FD}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Satrimono", "..\Satrimono\Satrimono.csproj", "{672AF627-B777-4124-9F76-33E8A5EF344D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommonWeb", "..\CommonWeb\CommonWeb.csproj", "{A53AAA3A-EC2F-40A1-B570-E76457CC616E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommonWebApp", "..\CommonWebApp\CommonWebApp.csproj", "{DE7700EB-BB79-4B3D-86BE-39163C5E5534}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{672AF627-B777-4124-9F76-33E8A5EF344D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{672AF627-B777-4124-9F76-33E8A5EF344D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{672AF627-B777-4124-9F76-33E8A5EF344D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{672AF627-B777-4124-9F76-33E8A5EF344D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A53AAA3A-EC2F-40A1-B570-E76457CC616E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A53AAA3A-EC2F-40A1-B570-E76457CC616E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A53AAA3A-EC2F-40A1-B570-E76457CC616E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A53AAA3A-EC2F-40A1-B570-E76457CC616E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE7700EB-BB79-4B3D-86BE-39163C5E5534}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE7700EB-BB79-4B3D-86BE-39163C5E5534}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE7700EB-BB79-4B3D-86BE-39163C5E5534}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE7700EB-BB79-4B3D-86BE-39163C5E5534}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0F00C7B4-28AE-4C0B-B71D-2C7884908014}
+	EndGlobalSection
+EndGlobal

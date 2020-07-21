@@ -1,0 +1,62 @@
+﻿@page
+@model  EconfirmationModel
+@{
+    var layout = ViewData.Layout();
+    layout.Title = "Sexual Magnetism Order Confirmation";
+}
+@section Sidebar {
+    <partial name="_BoxLatestArticles" />
+}
+@section Head  {
+    <meta name="robots" content="noindex">
+}
+<div class="productRow">
+    <h1>
+        Thanks for purchasing<br />
+        <i>Sexual Magnetism Blueprint</i>
+    </h1>
+    <p>Download your e-book and bonuses here.</p>
+    <br />
+    <p class="blue">Sexual Magnetism Blueprint</p>
+    <p><a href="http://www.shamanicattraction.com/files/sexualmagnetism.pdf" target="_blank"><b>Read Here</b></a> (right-click and 'Save Link As')</p>
+    @if (Model.HasUpgrade)
+    {
+    <br />
+    <p class="blue">Authentic Attraction</p>
+    <p><a href="https://www.shamanicattraction.com/files/authenticattraction.zip"><b>Download Here</b></a> (right-click and 'Save Link As')</p>
+    }
+    <p>&nbsp;</p>
+    <h4 class="blue">Sexual Magnetism comes with over $300 worth of bonuses.</h4>
+    <p>Go through the two first bonuses to introduce concepts before reading Sexual Magnetism.</p>
+    <p class="blue">BONUS #1: Breaking The Limits of Inner &amp; Outer Game audio.</p>
+    <p>
+        Listen to this hour-long audio from Rion Williams before reading Sexual Magnetism as it is a very good introduction
+        to the subject. It will reframe your view of reality to see beyond inner and outer game. It will prepare
+        your mind to soak in Sexual Magnetism more effectively.
+    </p>
+    <p>
+        <a href="http://mindreel.tv/iogamefull.mp3" target="_blank">Listen</a>
+    </p>
+
+    <p class="blue">BONUS #2: Financial Magnetism e-book.</p>
+    <p>
+        I know many of you are in difficult financial situations or have been convinced by the media that you
+        should live a recession. However, it doesn't have to affect you. You are responsible for your own wealth.
+        This e-book takes the principles of sexual magnetism and applies them to financial magnetism. The principles
+        to attract abundance are the same in all areas of life.
+    </p>
+    <p><a href="http://www.shamanicattraction.com/files/financialmagnetism.pdf" target="_blank">Read Here</a></p>
+
+    <p class="blue">BONUS #3: Natural Grounding Guide 2011 e-book.</p>
+    <p>
+        This e-book explains the Natural Grounding meditation in depth. It has proven to be extremely powerful
+        to develop self-confidence and worthiness, to overcome shyness, to overcome porn addiction and much
+        more.
+    </p>
+    <p><a href="http://www.shamanicattraction.com/files/ngguide2011.pdf" target="_blank">Read Here</a></p>
+
+    <p>
+        If you encounter any issues, please contact us at<br />
+        <a href="mailto:etienne@HanumanInstitute.com">etienne@HanumanInstitute.com</a>.
+    </p>
+</div>

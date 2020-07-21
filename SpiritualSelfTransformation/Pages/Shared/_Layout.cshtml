@@ -1,0 +1,101 @@
+﻿@using Microsoft.AspNetCore.Http.Extensions
+@{
+    var layout = ViewData.Layout();
+}
+<!DOCTYPE html>
+<html lang="@layout.Language">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@layout.Title - Spiritual Self Transformation</title>
+    <meta name="description" content="@layout.Description">
+    <meta name="keywords" content="@layout.Keywords">
+    <meta name="author" content="Etienne Charland" />
+
+    <meta property="og:site_name" content="Spiritual Self Transformation" />
+    <meta property="og:type" content="website" />
+    <meta property="fb:admins" content="726296462" />
+    <meta property="og:title" content="@(layout.FacebookTitle.Default(layout.Title + " - Spiritual Self Transformation"))" />
+    <meta property="og:image" content="@Url.AbsoluteContent(layout.FacebookImage.Default("~/images/logo-small.png"))" />
+    <meta property="og:url" content="@(Context.Request.GetEncodedUrl())" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/theme-overcast/jquery-ui-1.10.0.custom.min.css" />
+    <link rel="stylesheet" href="~/css/jqueryslidemenu.css" />
+    @RenderSection("Head", required: false)
+    @if (layout.UsePhotoSwipe)
+    {
+        <link rel="stylesheet" href="~/lib/photoswipe/photoswipe.css">
+        <link rel="stylesheet" href="~/lib/photoswipe/default-skin/default-skin.css">
+    }
+</head>
+<body>
+    <div id="page">
+        <div id="wrapper">
+            <div class="header">
+                <partial name="_Menu" />
+            </div>
+            <div id="middleDiv" class="middleDiv">
+                <partial name="_CookieConsentPartial" />
+                @if (layout.FacebookLike)
+                {
+                    <partial name="_FacebookLike" />
+                }
+                @if (layout.HeaderSubscribe)
+                {
+                    <partial name="_HeaderSubscribe" />
+                }
+                <div class="leftPanel alpha" @(Html.Raw(!layout.SidebarVisible ? "style='padding-left: 120px'" : ""))>
+                    <div class="productRow">
+                        @RenderBody()
+                        <div class="clear">
+                            &nbsp;
+                        </div>
+                        @*<uc1:ShareBar ID="ShareBar1" />*@
+                    </div>
+                </div>
+                @if (layout.SidebarVisible)
+                {
+                    <div id="Sidebar" class="rightPanel">
+                        @RenderSection("Sidebar", required: false)
+                        @if (!IsSectionDefined("Sidebar"))
+                        {
+                            <partial name="_BoxSubscribe" />
+                            <partial name="_BoxPromo" />
+                            <partial name="_BoxLatestArticles" />
+                        }
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+    <partial name="_Footer" />
+
+    <environment include="Development">
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"
+                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                asp-fallback-test="window.jQuery"
+                crossorigin="anonymous"
+                integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=">
+        </script>
+    </environment>
+    <script src="~/js/helper.js"></script>
+    <script src="~/js/jquery-ui-1.10.0.custom.min.js"></script>
+    <script src="~/js/jqueryslidemenu.js"></script>
+
+    @if (layout.UseValidationScripts)
+    {
+        <partial name="_ValidationScriptsPartial" />
+    }
+    @if (layout.UsePhotoSwipe)
+    {
+        <partial name="_PhotoSwipe" />
+        <script src="~/lib/photoswipe/photoswipe.min.js"></script>
+        <script src="~/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+        <script src="~/lib/photoswipe/photoswipe-action.js"></script>
+    }
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,104 @@
+﻿@page
+@{
+    Layout = "_Layout";
+    ViewData["ActiveIndex"] = 0;
+    ViewData["Title"] = "Home";
+    ViewData["Description"] = "Satrimono Publishing's mission is to recover and publish lost knowledge from other worlds to aid us through our period of ascension.";
+    ViewData["Keywords"] = "publishing, book, ascension, metatron, federation of life, psychic, clairvoyance, orion, orion federation, energy shift, soul purpose, knowledge, laws of the Universe, life, love, truth, freedom";
+}
+@section Title {
+    <div class="row banner-container">
+        <div class="col-sm-3 mar-top-20 wow fadeInUp " data-wow-duration="1s" data-wow-delay="0.1s">
+            <img src="~/images/history-of-universe-front.jpg" class="img-responsive banner-img" alt="The History of the Universe">
+        </div>
+        <div class="col-sm-9 mar-top-40 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s">
+            <h1>"The History of the Universe"</h1>
+            <div class="mar-top-20 text-center">
+                <p class="font-18 text-white">by Etienne Charland</p>
+            </div>
+            <h2 class="mar-top-20">
+                A journey through time to understand
+                <br>
+                current geopolitical events
+            </h2>
+            <div class="clearfix"></div>
+            <div class="mar-top-30 text-center">
+                <a href="http://amzn.to/2jaaVVf" class="red-btn mar-top-15 trs">Purchase on Amazon</a> &nbsp;
+                <a href="bulk-order" class="white-border-btn mar-top-15 trs">BULK ORDER</a>
+            </div>
+        </div>
+    </div>
+}
+
+<div class="whiite-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 mar-top-30 right-border">
+                <h1 class="main-head">
+                    Welcome to<br>
+                    <span class="blue-text">SATRIMONO PUBLISHING</span>
+                </h1>
+                <p class="mar-top-20">Satrimono Publishing's mission is to recover and publish lost knowledge from other worlds to aid us through our period of ascension.</p>
+                <div class="mar-top-30">
+                    <a asp-page="mission" class="red-border-btn trs">Read more about our mission</a>
+                </div>
+            </div>
+            <div class="col-sm-6 mar-top-30">
+                <img src="~/images/book-img.png" class="img-responsive pull-left-img" alt="Book Accuracy List">
+                <p>One problem we face is that half of the information available online regarding spirituality, consciousness and disclosure is governmental disinformation, and the other half is partial misinformation. People don’t know what to believe in anymore. As a solution, we have put together a list of books with their vibrational level and accuracy level measured with kinesiology.</p>
+                <div class=" mar-top-10 text-right">
+                    <a asp-page="book-accuracy-list" class="red-border-btn trs">View the Book Accuracy List </a>
+                </div>
+            </div>
+        </div>
+        <div class="home-banner-add mar-top-30 mar-btm-15">
+            <div class="row">
+                <div class="col-sm-3">
+                    <img src="~/images/cd-img.png" class="img-responsive" alt="cd">
+                </div>
+                <div class="col-sm-8">
+                    <h3 class="hex-color-text">“You Know You Have a Higher Purpose You Are Not Living”</h3>
+                    <p class="font-16 text-white mar-top-20">Sign up for the Force of Life Free Training to</p>
+                    <ul class="green-tick-list">
+                        <li>See what is keeping you stuck so that you can turn the situation around</li>
+                        <li>Understand the true power hidden within you</li>
+                        <li>Open the door to stepping into your greater path, purpose and freedom</li>
+                    </ul>
+                    <div class="text-center  mar-top-15">
+                        <a href="https://www.forceoflife.net" target="_blank" class="red-btn trs">REGISTER NOW</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+</div>
+<!-- End Welcome section  Here -->
+<!-- starts Articles section  Here -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6 latest-articles">
+            <div class="latest-articles-in">
+                <h1><a href="https://www.spiritualselftransformation.com/blog/">Latest Articles</a></h1>
+                @*@await Component.InvokeAsync("LatestArticles", 0)*@
+                <partial name="_LatestArticles" />
+                <div class="clearfix"></div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="col-md-6 federation-outer">
+            <div class="federation-in">
+                <h1>
+                    <a href="#">
+                        <span>Messages from</span>
+                        Federation of Light
+                    </a>
+                </h1>
+                <partial name="_LatestMessages" />
+                <div class="clearfix"></div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>

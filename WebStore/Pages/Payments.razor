@@ -1,0 +1,80 @@
+﻿@page "/payments/{contactId:int}"
+@page "/payments/{contactId:int}/{callingPlanId:int}"
+@inject IPaymentPlanProcessor _planProcessor
+@inject IDateTimeService _dateService
+<Page Title="Recurring Payments" />
+
+@if (Error != null)
+{
+    <h2>@Error</h2>
+}
+else if (CallingPlanId.HasValue)
+{
+    if (Result == null)
+    {
+        <h2>Processing your payments...</h2>
+    }
+    else if (Result.Status == PaymentStatus.Approved)
+    {
+        <h2>Your payment has been successful!</h2>
+    }
+    else
+    {
+        <h2>Your payment was declined.</h2>
+    }
+}
+else
+{
+    if (Products == null)
+    {
+        <h2>Loading your orders...</h2>
+    }
+    else if (!Products.Any())
+    {
+        <h2>You have nothing to pay.</h2>
+    }
+    else
+    {
+        <OrderForm Products="@Products" EnablePayPal="false" />
+    }
+}
+
+@code {
+    [ParameterAttribute]
+    public int ContactId { get; set; }
+    [ParameterAttribute]
+    public int? CallingPlanId { get; set; }
+    public string? Error { get; set; }
+    public PaymentResult? Result { get; set; }
+
+    public List<OrderFormProduct>? Products;
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (CallingPlanId.HasValue)
+        {
+            // Process automatically.
+            Result = await _planProcessor.ProcessInQueueAsync(ContactId, CallingPlanId.Value, _dateService.NowOffset);
+        }
+        else
+        {
+            // Display cart with products.
+            var t1 = _planProcessor.GetContactAsync(ContactId);
+            var t2 = _planProcessor.GetPaymentPlansAsync(ContactId);
+            try
+            {
+                await Task.WhenAll(t1, t2).ConfigureAwait(false);
+
+                var contact = t1.Result;
+                var plans = t2.Result;
+
+                Products = _planProcessor.GetBillProducts(contact, plans, _dateService.NowOffset).Select(x =>
+                    new OrderFormProduct(x.Name, x.Price) { Quantity = x.Quantity }).ToList();
+            }
+            catch (HttpRequestException)
+            {
+                Error = "Contact not found.";
+            }
+        }
+    }
+}

@@ -1,0 +1,121 @@
+﻿@page "{key}"
+@model HanumanInstitute.Satrimono.Pages.BookAccuracyListDetailModel
+@using HanumanInstitute.CommonWeb
+@{
+    ViewData["ActiveIndex"] = 4;
+    ViewData["Title"] = $"\"{Model.Book.Title}\" Review";
+    ViewData["Description"] = $"Accuracy reading and review of book {Model.Book.Title} written by {Model.Book.Author}.";
+    ViewData["Keywords"] = "spirituality, consciousness, disclosure, disinformation, truth, accuracy reading, muscle testing, free, vibrational level, spiritual books";
+}
+<div class="row">
+    <div class="owner-text text-center">
+        <p>
+            <i class="fa fa-quote-left" aria-hidden="true"></i>
+            Half of the information available online regarding spirituality, consciousness and disclosure is governmental disinformation;<br>
+            the other half is partial misinformation.<i class="fa fa-quote-right" aria-hidden="true"></i> &mdash; Etienne Charland
+        </p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <p>Many people are confused and don’t know what to believe in anymore. This book list measures the accuracy and vibrational level on the Hawkins scale of many popular books. This will help you put all this knowledge in its proper context and help open your mind for more truth.</p>
+        <p><a asp-page="how-to-measure-hawkins-scale">Read about our measurement methodology here.</a></p>
+    </div>
+</div>
+
+<div class="row mar-btm-10">
+    <div class="col-sm-12">
+        @if (Model.Books.Count() == 1)
+        {
+            <div class="row books-details">
+                <div class="col-sm-12 mar-btm-30">
+                    @if (!string.IsNullOrEmpty(Model.Book.Url))
+                    {
+                        @Html.Raw($"<a href='{Model.Book.Url}' target='_blank'>")
+                    }
+                    @Html.DisplayFor(x => x.Book.Title)
+                    @if (!string.IsNullOrEmpty(Model.Book.Subtitle))
+                    {
+                        <span class='subtitle'>: @Html.DisplayFor(x => x.Book.Subtitle)</span>
+                    }
+                    @if (!string.IsNullOrEmpty(Model.Book.Url))
+                    {
+                        @Html.Raw("</a>")
+                    }
+                    <br />
+                    <span class="books-subtitle">by @Html.DisplayFor(x => x.Book.Author)</span>
+                </div>
+                @if (Model.Book.IsFiction == false && Model.Book.Accuracy.HasValue)
+                {
+                    <div class="col-sm-3">
+                        @Html.DisplayNameFor(x => x.Book.Accuracy): <strong>@Html.DisplayFor(x => x.Book.Accuracy)</strong>
+                    </div>
+                }
+                <div class="col-sm-6">
+                    @if (Model.Book.Vibration.HasValue)
+                    {
+                        <div>
+                            @Html.DisplayNameFor(x => x.Book.Vibration): <strong>@Html.DisplayFor(x => x.Book.Vibration)</strong>
+                            @Html.Raw($"({Model.GetVibrationDescription(Model.Book)})")
+                        </div>
+                    }
+                </div>
+                <div class="col-sm-12 books-subtitle mar-top-10 mar-btm-20">
+                    @Html.Raw(Model.GetReadingOverview(Model.Book))
+                </div>
+                <div class="col-sm-4">
+                    @Html.Raw(Model.GetPurchaseLink(Model.Book))
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="books-details">
+                @Html.DisplayFor(x => x.Book.Title)
+                <br /><span class="books-subtitle">by @Html.DisplayFor(x => x.Book.Author)</span>
+            </div>
+            @foreach (var item in Model.Books)
+            {
+                <div class="row books-subtitle mar-top-15">
+                    <div class="col-sm-5">
+                        @if (!string.IsNullOrEmpty(item.Url))
+                        {
+                            <a href="@item.Url" target="_blank">
+                                @Html.DisplayFor(x => item.Subtitle)
+                            </a>
+                        }
+                        else
+                        {
+                            @Html.DisplayFor(x => item.Subtitle)
+                        }
+                    </div>
+                    <div class="col-sm-3">
+                        @if (item.IsFiction == false && item.Accuracy.HasValue)
+                        {
+                            <div>
+                                @Html.DisplayNameFor(x => item.Accuracy): <strong>@Html.DisplayFor(x => item.Accuracy)</strong>
+                            </div>
+                        }
+                    </div>
+                    <div class="col-sm-4">
+                        @if (Model.Book.Vibration.HasValue)
+                        {
+                            <div>
+                                @Html.DisplayNameFor(x => item.Vibration): <strong>@Html.DisplayFor(x => item.Vibration)</strong>
+                                @Html.Raw($"({Model.GetVibrationDescription(item)})")
+                            </div>
+                        }
+                    </div>
+                </div>
+
+                <div class="books-subtitle mar-btm-5">
+                    @Html.Raw(Model.GetReadingOverview(item))
+                </div>
+                @Html.Raw(Model.GetPurchaseLink(item))
+            }
+        }
+    </div>
+</div>
+
+<partial name="Shared/_ShareBar" />
+<p class="mar-top-50"><a asp-page="book-accuracy-list">Return to Book Accuracy List</a></p>
